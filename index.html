@@ -1,1 +1,1888 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz Floral 🌸 | Cosméticos Naturais</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================================
+                   RESET E BASE
+                   ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FEF9F4;
+            color: #5C4B3A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================================
+                   VARIÁVEIS
+                   ============================================================ */
+        :root {
+            --dourado: #D4A373;
+            --dourado-claro: #F0D5B0;
+            --dourado-escuro: #C68A42;
+            --rosa: #F5D6D0;
+            --rosa-claro: #FEF9F4;
+            --rosa-escuro: #E8C4B8;
+            --verde: #A8C4A0;
+            --verde-claro: #D4E8D0;
+            --verde-escuro: #8AAF82;
+            --marrom: #5C4B3A;
+            --marrom-claro: #7A6652;
+            --cinza: #8A7A6B;
+            --cinza-claro: #B5A898;
+            --branco: #FFFFFF;
+            --preto: #1A1510;
+
+            --sombra-suave: 0 4px 20px rgba(92, 75, 58, 0.08);
+            --sombra-media: 0 8px 30px rgba(92, 75, 58, 0.12);
+            --sombra-forte: 0 12px 40px rgba(92, 75, 58, 0.18);
+            --sombra-dourada: 0 4px 20px rgba(212, 163, 115, 0.3);
+
+            --borda-pequena: 8px;
+            --borda-media: 16px;
+            --borda-grande: 24px;
+            --borda-arredondada: 50px;
+
+            --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transicao-lenta: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+            --gradiente-dourado: linear-gradient(135deg, #D4A373, #C68A42);
+            --gradiente-rosa: linear-gradient(135deg, #F5D6D0, #FEF9F4);
+            --gradiente-verde: linear-gradient(135deg, #A8C4A0, #D4E8D0);
+            --gradiente-hero: linear-gradient(135deg, #F5D6D0 0%, #FEF9F4 50%, #F0D5B0 100%);
+        }
+
+        /* ============================================================
+                   CONTAINER
+                   ============================================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+                   TIPOGRAFIA
+                   ============================================================ */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marrom);
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .subtitulo-secao {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--cinza);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .texto-corpo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--marrom);
+            line-height: 1.8;
+        }
+
+        .texto-claro {
+            color: var(--cinza);
+            font-weight: 300;
+        }
+
+        /* ============================================================
+                   BOTÕES
+                   ============================================================ */
+        .botao-primario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradiente-dourado);
+            color: var(--branco);
+            padding: 16px 36px;
+            border-radius: var(--borda-arredondada);
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transicao);
+            box-shadow: var(--sombra-dourada);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .botao-primario::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .botao-primario:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .botao-primario:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 163, 115, 0.4);
+        }
+
+        .botao-primario:active {
+            transform: translateY(0);
+        }
+
+        .botao-secundario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--marrom);
+            padding: 14px 32px;
+            border-radius: var(--borda-arredondada);
+            border: 2px solid var(--dourado);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transicao);
+            text-decoration: none;
+        }
+
+        .botao-secundario:hover {
+            background: var(--dourado);
+            color: var(--branco);
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-dourada);
+        }
+
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dourado);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transicao);
+            padding: 8px 16px;
+            border-radius: var(--borda-arredondada);
+        }
+
+        .botao-voltar:hover {
+            color: var(--dourado-escuro);
+            transform: translateX(-5px);
+            background: rgba(212, 163, 115, 0.1);
+        }
+
+        /* ============================================================
+                   LINHA DECORATIVA
+                   ============================================================ */
+        .linha-decorativa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 16px auto 40px;
+        }
+
+        .linha-decorativa::before,
+        .linha-decorativa::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+        }
+
+        .linha-decorativa .flor {
+            font-size: 1.5rem;
+            color: var(--dourado);
+        }
+
+        /* ============================================================
+                   CABEÇALHO
+                   ============================================================ */
+        .cabecalho {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--sombra-suave);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 163, 115, 0.1);
+        }
+
+        .cabecalho .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo .icone {
+            font-size: 1.6rem;
+        }
+
+        .logo .texto {
+            color: var(--dourado);
+        }
+
+        .logo .texto-escuro {
+            color: var(--marrom);
+        }
+
+        /* Menu */
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .menu ul li a {
+            color: var(--marrom);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transicao);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .menu ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: var(--transicao);
+            border-radius: 2px;
+        }
+
+        .menu ul li a:hover {
+            color: var(--dourado);
+        }
+
+        .menu ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu ul li a.ativo {
+            color: var(--dourado);
+        }
+
+        .menu ul li a.ativo::after {
+            width: 100%;
+        }
+
+        /* Ações do cabeçalho */
+        .acoes-cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .link-carrinho {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--marrom);
+            transition: var(--transicao);
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .link-carrinho:hover {
+            color: var(--dourado);
+        }
+
+        .contador-carrinho {
+            background: var(--dourado);
+            color: var(--branco);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 1px 8px;
+            border-radius: 50%;
+            min-width: 20px;
+            text-align: center;
+            transition: var(--transicao);
+        }
+
+        .link-carrinho:hover .contador-carrinho {
+            background: var(--dourado-escuro);
+            transform: scale(1.1);
+        }
+
+        /* Menu Mobile - Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--marrom);
+            padding: 4px;
+            transition: var(--transicao);
+        }
+
+        .menu-toggle:hover {
+            color: var(--dourado);
+        }
+
+        /* ============================================================
+                   BANNER HERO
+                   ============================================================ */
+        .hero {
+            padding: 80px 0 60px;
+            background: var(--gradiente-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🌸';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            font-size: 8rem;
+            opacity: 0.08;
+            transform: rotate(15deg);
+        }
+
+        .hero::after {
+            content: '🍯';
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 6rem;
+            opacity: 0.06;
+            transform: rotate(-10deg);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-conteudo {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            padding: 6px 20px;
+            border-radius: var(--borda-arredondada);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-conteudo h1 {
+            margin-bottom: 16px;
+        }
+
+        .hero-conteudo h1 .destaque {
+            color: var(--dourado);
+        }
+
+        .hero-conteudo p {
+            font-size: 1.15rem;
+            color: var(--cinza);
+            margin-bottom: 32px;
+            max-width: 90%;
+            line-height: 1.8;
+        }
+
+        .hero-botoes {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-imagem {
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-imagem img {
+            width: 100%;
+            border-radius: var(--borda-grande);
+            box-shadow: var(--sombra-forte);
+            transition: var(--transicao-lenta);
+        }
+
+        .hero-imagem:hover img {
+            transform: scale(1.02) rotate(-1deg);
+        }
+
+        /* ============================================================
+                   ANIMAÇÕES
+                   ============================================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ============================================================
+                   SELOS DE QUALIDADE
+                   ============================================================ */
+        .selos-qualidade {
+            padding: 40px 0;
+            background: var(--branco);
+            border-bottom: 1px solid rgba(212, 163, 115, 0.08);
+        }
+
+        .grade-selos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .item-selo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            border-radius: var(--borda-media);
+            transition: var(--transicao);
+            cursor: default;
+        }
+
+        .item-selo:hover {
+            background: var(--rosa-claro);
+            transform: translateY(-4px);
+        }
+
+        .item-selo .icone {
+            font-size: 2rem;
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--rosa-claro);
+            border-radius: 50%;
+            transition: var(--transicao);
+        }
+
+        .item-selo:hover .icone {
+            background: var(--dourado-claro);
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .item-selo .info h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .item-selo .info p {
+            font-size: 0.85rem;
+            color: var(--cinza);
+        }
+
+        /* ============================================================
+                   CATEGORIAS
+                   ============================================================ */
+        .categorias {
+            padding: 80px 0 60px;
+            background: var(--rosa-claro);
+        }
+
+        .grade-categorias {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .card-categoria {
+            background: var(--branco);
+            padding: 32px 20px 28px;
+            border-radius: var(--borda-media);
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-categoria::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradiente-dourado);
+            transform: scaleX(0);
+            transition: var(--transicao);
+        }
+
+        .card-categoria:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-categoria:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .card-categoria .icone {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 12px;
+            transition: var(--transicao);
+        }
+
+        .card-categoria:hover .icone {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .card-categoria h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .card-categoria p {
+            font-size: 0.85rem;
+            color: var(--cinza);
+        }
+
+        /* ============================================================
+                   PRODUTOS EM DESTAQUE
+                   ============================================================ */
+        .destaques {
+            padding: 80px 0 60px;
+        }
+
+        .grade-produtos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .card-produto {
+            background: var(--branco);
+            border-radius: var(--borda-media);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+            position: relative;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-forte);
+        }
+
+        .card-produto .imagem {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            background: var(--rosa-claro);
+        }
+
+        .card-produto .imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicao-lenta);
+        }
+
+        .card-produto:hover .imagem img {
+            transform: scale(1.08);
+        }
+
+        .card-produto .selo-oferta {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--dourado);
+            color: var(--branco);
+            padding: 4px 14px;
+            border-radius: var(--borda-arredondada);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .card-produto .selo-novo {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--verde);
+            color: var(--branco);
+            padding: 4px 14px;
+            border-radius: var(--borda-arredondada);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .card-produto .info {
+            padding: 18px 20px 20px;
+        }
+
+        .card-produto .info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            transition: var(--transicao);
+        }
+
+        .card-produto:hover .info h3 {
+            color: var(--dourado);
+        }
+
+        .card-produto .info .descricao {
+            font-size: 0.85rem;
+            color: var(--cinza);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-produto .selos {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .card-produto .selo {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding: 2px 12px;
+            border-radius: var(--borda-arredondada);
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+        }
+
+        .card-produto .selo.vegano {
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+        }
+
+        .card-produto .selo.natural {
+            background: var(--dourado-claro);
+            color: var(--dourado-escuro);
+        }
+
+        .card-produto .selo.cruelty {
+            background: var(--rosa);
+            color: var(--marrom);
+        }
+
+        .card-produto .preco-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .card-produto .preco-atual {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dourado);
+        }
+
+        .card-produto .preco-antigo {
+            font-size: 0.9rem;
+            color: var(--cinza-claro);
+            text-decoration: line-through;
+        }
+
+        .card-produto .btn-comprar {
+            width: 100%;
+            padding: 12px;
+            background: var(--marrom);
+            color: var(--branco);
+            border: none;
+            border-radius: var(--borda-pequena);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transicao);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-produto .btn-comprar:hover {
+            background: var(--dourado);
+            transform: scale(1.02);
+        }
+
+        .card-produto .btn-comprar.adicionado {
+            background: var(--verde);
+        }
+
+        /* ============================================================
+                   DEPOIMENTOS
+                   ============================================================ */
+        .depoimentos {
+            padding: 80px 0;
+            background: var(--gradiente-rosa);
+            position: relative;
+        }
+
+        .depoimentos::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8rem;
+            color: var(--dourado);
+            opacity: 0.08;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .grade-depoimentos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-depoimento {
+            background: var(--branco);
+            padding: 32px 28px;
+            border-radius: var(--borda-media);
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+            position: relative;
+        }
+
+        .card-depoimento:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .card-depoimento .aspas {
+            font-size: 2.5rem;
+            color: var(--dourado);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-depoimento p {
+            font-style: italic;
+            color: var(--marrom);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .card-depoimento .cliente {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-depoimento .cliente .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--dourado-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--marrom);
+        }
+
+        .card-depoimento .cliente .nome {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .card-depoimento .cliente .cidade {
+            font-size: 0.8rem;
+            color: var(--cinza);
+        }
+
+        .card-depoimento .estrelas {
+            color: var(--dourado);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        /* ============================================================
+                   NEWSLETTER
+                   ============================================================ */
+        .newsletter {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--marrom) 0%, #3D3228 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '🌸';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 12rem;
+            opacity: 0.04;
+            transform: rotate(20deg);
+        }
+
+        .newsletter::after {
+            content: '🍯';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            font-size: 10rem;
+            opacity: 0.04;
+            transform: rotate(-15deg);
+        }
+
+        .newsletter .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter h2 {
+            color: var(--branco);
+            margin-bottom: 8px;
+        }
+
+        .newsletter p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+
+        .form-newsletter {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .form-newsletter input {
+            flex: 1;
+            padding: 16px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--borda-arredondada);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--branco);
+            outline: none;
+            transition: var(--transicao);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-newsletter input:focus {
+            border-color: var(--dourado);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.15);
+        }
+
+        .form-newsletter .botao-primario {
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+                   VOLTAR PORTFÓLIO
+                   ============================================================ */
+        .voltar-portfolio {
+            padding: 20px 0;
+            background: var(--preto);
+            text-align: center;
+            border-top: 1px solid rgba(212, 163, 115, 0.1);
+        }
+
+        .voltar-portfolio .botao-voltar {
+            color: var(--dourado);
+            font-weight: 500;
+        }
+
+        .voltar-portfolio .botao-voltar:hover {
+            color: var(--dourado-claro);
+        }
+
+        /* ============================================================
+                   RODAPÉ
+                   ============================================================ */
+        .rodape {
+            background: var(--preto);
+            color: var(--branco);
+            padding: 60px 0 30px;
+        }
+
+        .grade-rodape {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .coluna-rodape h4 {
+            color: var(--dourado);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .coluna-rodape p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .coluna-rodape ul li {
+            margin-bottom: 10px;
+        }
+
+        .coluna-rodape ul li a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transicao);
+            font-size: 0.95rem;
+        }
+
+        .coluna-rodape ul li a:hover {
+            color: var(--dourado);
+            padding-left: 4px;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .redes-sociais a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transicao);
+            padding: 8px 16px;
+            border-radius: var(--borda-arredondada);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        .redes-sociais a:hover {
+            color: var(--branco);
+            background: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        .rodape-inferior {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .rodape-inferior .coracao {
+            color: var(--rosa);
+        }
+
+        /* ============================================================
+                   RESPONSIVIDADE
+                   ============================================================ */
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-conteudo p {
+                max-width: 100%;
+            }
+
+            .hero-botoes {
+                justify-content: center;
+            }
+
+            .hero-imagem {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .grade-produtos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grade-categorias {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grade-depoimentos {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grade-selos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grade-rodape {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                padding: 20px 24px;
+                gap: 16px;
+                box-shadow: var(--sombra-forte);
+                border-radius: 0 0 var(--borda-media) var(--borda-media);
+            }
+
+            .menu ul.aberto {
+                display: flex;
+            }
+
+            .menu ul li a {
+                font-size: 1.1rem;
+                padding: 8px 0;
+                display: block;
+            }
+
+            .grade-produtos {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .card-produto .imagem {
+                height: 180px;
+            }
+
+            .grade-categorias {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .grade-depoimentos {
+                grid-template-columns: 1fr;
+            }
+
+            .grade-selos {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .grade-rodape {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .redes-sociais {
+                justify-content: center;
+            }
+
+            .form-newsletter {
+                flex-direction: column;
+                padding: 0 16px;
+            }
+
+            .form-newsletter input {
+                text-align: center;
+            }
+
+            .hero {
+                padding: 40px 0 30px;
+            }
+
+            .selos-qualidade {
+                padding: 24px 0;
+            }
+
+            .categorias {
+                padding: 40px 0 30px;
+            }
+
+            .destaques {
+                padding: 40px 0 30px;
+            }
+
+            .depoimentos {
+                padding: 40px 0 30px;
+            }
+
+            .newsletter {
+                padding: 50px 0;
+            }
+
+            .rodape {
+                padding: 40px 0 20px;
+            }
+
+            .card-depoimento {
+                padding: 24px 20px;
+            }
+
+            .card-categoria {
+                padding: 24px 16px;
+            }
+
+            .card-produto .info {
+                padding: 14px 16px 16px;
+            }
+
+            .card-produto .preco-atual {
+                font-size: 1.1rem;
+            }
+
+            .linha-decorativa::before,
+            .linha-decorativa::after {
+                width: 30px;
+            }
+        }
+
+        /* Mobile pequeno */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .grade-produtos {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .grade-categorias {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .hero-botoes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-botoes .botao-primario,
+            .hero-botoes .botao-secundario {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .card-produto .imagem {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    CABEÇALHO
+    ============================================================ -->
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="icone">🌸</span>
+                <span class="texto-escuro">Raiz</span>
+                <span class="texto">Floral</span>
+            </a>
+
+            <nav class="menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                    ☰
+                </button>
+                <ul id="menuList">
+                    <li><a href="index.html" class="ativo">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="acoes-cabecalho">
+                <a href="carrinho.html" class="link-carrinho">
+                    🛒
+                    <span class="contador-carrinho" id="contadorCarrinho">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO - BANNER PRINCIPAL
+    ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-conteudo">
+                <span class="hero-tag">🌿 100% Natural</span>
+                <h1>
+                    Beleza que vem<br>
+                    da <span class="destaque">natureza</span>
+                </h1>
+                <p>
+                    Cosméticos veganos, cruelty-free e feitos com ingredientes
+                    que a terra nos dá. Para cuidar de você e do planeta.
+                </p>
+                <div class="hero-botoes">
+                    <a href="produtos.html" class="botao-primario">
+                        Explorar produtos →
+                    </a>
+                    <a href="sobre.html" class="botao-secundario">
+                        Nossa história
+                    </a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <img
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&h=450&fit=crop&crop=center"
+                alt="Cosméticos naturais Raiz Floral"
+                loading="lazy"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SELOS DE QUALIDADE
+    ============================================================ -->
+    <section class="selos-qualidade">
+        <div class="container">
+            <div class="grade-selos">
+                <div class="item-selo">
+                    <div class="icone">🌱</div>
+                    <div class="info">
+                        <h4>100% Natural</h4>
+                        <p>Ingredientes da natureza</p>
+                    </div>
+                </div>
+                <div class="item-selo">
+                    <div class="icone">🐰</div>
+                    <div class="info">
+                        <h4>Cruelty-Free</h4>
+                        <p>Não testamos em animais</p>
+                    </div>
+                </div>
+                <div class="item-selo">
+                    <div class="icone">🌍</div>
+                    <div class="info">
+                        <h4>Sustentável</h4>
+                        <p>Embalagens recicláveis</p>
+                    </div>
+                </div>
+                <div class="item-selo">
+                    <div class="icone">❤️</div>
+                    <div class="info">
+                        <h4>Feito com amor</h4>
+                        <p>Produção artesanal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CATEGORIAS
+    ============================================================ -->
+    <section class="categorias">
+        <div class="container">
+            <h2>Nossas Categorias</h2>
+            <p class="subtitulo-secao">
+                Encontre o produto perfeito para sua pele
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌸</span>
+            </div>
+
+            <div class="grade-categorias">
+                <div class="card-categoria">
+                    <span class="icone">🧴</span>
+                    <h3>Hidratantes</h3>
+                    <p>Para uma pele macia</p>
+                </div>
+                <div class="card-categoria">
+                    <span class="icone">🧼</span>
+                    <h3>Sabonetes</h3>
+                    <p>Limpeza suave e natural</p>
+                </div>
+                <div class="card-categoria">
+                    <span class="icone">🌿</span>
+                    <h3>Óleos Essenciais</h3>
+                    <p>Aromaterapia e bem-estar</p>
+                </div>
+                <div class="card-categoria">
+                    <span class="icone">🌸</span>
+                    <h3>Perfumes</h3>
+                    <p>Fragrâncias que encantam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PRODUTOS EM DESTAQUE
+    ============================================================ -->
+    <section class="destaques">
+        <div class="container">
+            <h2>Produtos em Destaque</h2>
+            <p class="subtitulo-secao">
+                Os mais amados pelas nossas clientes
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🍯</span>
+            </div>
+
+            <div class="grade-produtos" id="produtosDestaque">
+                <!-- Produtos serão inseridos pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    DEPOIMENTOS
+    ============================================================ -->
+    <section class="depoimentos">
+        <div class="container">
+            <h2>O que nossas clientes dizem</h2>
+            <p class="subtitulo-secao">
+                Histórias reais de quem ama a Raiz Floral
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌸</span>
+            </div>
+
+            <div class="grade-depoimentos">
+                <div class="card-depoimento">
+                    <span class="aspas">"</span>
+                    <div class="estrelas">★★★★★</div>
+                    <p>
+                        "Os produtos da Raiz Floral transformaram minha pele.
+                        Sinto que estou cuidando de mim com o que a natureza
+                        tem de melhor."
+                    </p>
+                    <div class="cliente">
+                        <div class="avatar">MS</div>
+                        <div>
+                            <div class="nome">Mariana Silva</div>
+                            <div class="cidade">São Paulo, SP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-depoimento">
+                    <span class="aspas">"</span>
+                    <div class="estrelas">★★★★★</div>
+                    <p>
+                        "Além de cheirosos, são naturais e fazem muito bem.
+                        Recomendo para todas as amigas! Já virei cliente fiel."
+                    </p>
+                    <div class="cliente">
+                        <div class="avatar">CM</div>
+                        <div>
+                            <div class="nome">Carla Mendes</div>
+                            <div class="cidade">Rio de Janeiro, RJ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-depoimento">
+                    <span class="aspas">"</span>
+                    <div class="estrelas">★★★★★</div>
+                    <p>
+                        "Finalmente encontrei cosméticos veganos de qualidade.
+                        A Raiz Floral é minha marca favorita. Produtos incríveis!"
+                    </p>
+                    <div class="cliente">
+                        <div class="avatar">JR</div>
+                        <div>
+                            <div class="nome">Juliana Rocha</div>
+                            <div class="cidade">Belo Horizonte, MG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    NEWSLETTER
+    ============================================================ -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Receba novidades 🌸</h2>
+            <p>
+                Assine nossa newsletter e ganhe <strong>10% off</strong> na primeira compra
+            </p>
+            <form class="form-newsletter" id="formNewsletter">
+                <input
+                type="email"
+                placeholder="Seu melhor e-mail"
+                required
+                id="emailNewsletter"
+                >
+                <button type="submit" class="botao-primario">
+                    Assinar →
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    VOLTAR AO PORTFÓLIO
+    ============================================================ -->
+    <div class="voltar-portfolio">
+        <div class="container">
+            <a href="https://seu-usuario.github.io/portfolio/" class="botao-voltar">
+                ← Voltar ao Portfólio
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    RODAPÉ
+    ============================================================ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grade-rodape">
+                <div class="coluna-rodape">
+                    <h4>🌸 Raiz Floral</h4>
+                    <p>
+                        Cosméticos naturais para quem ama a pele e o planeta.
+                        Feitos com ingredientes que a terra nos dá.
+                    </p>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Redes Sociais</h4>
+                    <div class="redes-sociais">
+                        <a href="#">📱 Instagram</a>
+                        <a href="#">📱 Facebook</a>
+                        <a href="#">📱 YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <p>
+                    © 2024 Raiz Floral - Feito com
+                    <span class="coracao">🌸</span> por
+                    <strong>Seu Nome</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // PRODUTOS - Catálogo
+        // ============================================================
+        const produtos = [{
+            id: 1,
+            nome: "Hidratante Florescer",
+            descricao: "Hidratação profunda com karité e jojoba",
+            preco: 89.90,
+            precoPromocional: 71.92,
+            imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+            selos: ["Vegano", "Natural"],
+            destaque: true
+        }, {
+            id: 2,
+            nome: "Sabonete Mel & Flor",
+            descricao: "Limpeza suave com mel orgânico",
+            preco: 34.90,
+            precoPromocional: null,
+            imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+            selos: ["100% Natural"],
+            destaque: true
+        }, {
+            id: 3,
+            nome: "Óleo Essencial Lavanda",
+            descricao: "Aroma relaxante e calmante",
+            preco: 49.90,
+            precoPromocional: 39.90,
+            imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+            selos: ["Orgânico", "Cruelty-Free"],
+            destaque: true
+        }, {
+            id: 4,
+            nome: "Perfume Floral Suave",
+            descricao: "Fragrância leve com notas florais",
+            preco: 129.90,
+            precoPromocional: null,
+            imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+            selos: ["Vegano"],
+            destaque: true
+        }];
+
+        // ============================================================
+        // RENDERIZAR PRODUTOS
+        // ============================================================
+        function renderizarProdutos() {
+            const container = document.getElementById('produtosDestaque');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            produtos.forEach(produto => {
+                const temPromocao = produto.precoPromocional && produto.precoPromocional < produto.preco;
+                const desconto = temPromocao ?
+                    Math.round((1 - produto.precoPromocional / produto.preco) * 100) :
+                    0;
+
+                const card = document.createElement('div');
+                card.className = 'card-produto';
+                card.innerHTML = `
+                        <div class="imagem">
+                            <img src="${produto.imagem}" alt="${produto.nome}" loading="lazy">
+                            ${temPromocao ? `<span class="selo-oferta">-${desconto}%</span>` : ''}
+                            ${produto.destaque && !temPromocao ? `<span class="selo-novo">Destaque</span>` : ''}
+                        </div>
+                        <div class="info">
+                            <h3>${produto.nome}</h3>
+                            <p class="descricao">${produto.descricao}</p>
+                            <div class="selos">
+                                ${produto.selos.map(selo =>
+                                    `<span class="selo">${selo}</span>`
+                                ).join('')}
+                            </div>
+                            <div class="preco-area">
+                                ${temPromocao ? `
+                                    <span class="preco-antigo">R$ ${produto.preco.toFixed(2)}</span>
+                                    <span class="preco-atual">R$ ${produto.precoPromocional.toFixed(2)}</span>
+                                ` : `
+                                    <span class="preco-atual">R$ ${produto.preco.toFixed(2)}</span>
+                                `}
+                            </div>
+                            <button class="btn-comprar" data-id="${produto.id}">
+                                Adicionar ao carrinho
+                            </button>
+                        </div>
+                    `;
+
+                container.appendChild(card);
+            });
+
+            // Adicionar eventos aos botões
+            document.querySelectorAll('.btn-comprar').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const id = parseInt(this.dataset.id);
+                    adicionarAoCarrinho(id);
+                });
+            });
+        }
+
+        // ============================================================
+        // CARRINHO
+        // ============================================================
+        let carrinho = [];
+
+        function adicionarAoCarrinho(id) {
+            const produto = produtos.find(p => p.id === id);
+            if (!produto) return;
+
+            const itemExistente = carrinho.find(item => item.id === id);
+
+            if (itemExistente) {
+                itemExistente.quantidade++;
+            } else {
+                carrinho.push({
+                    id: produto.id,
+                    nome: produto.nome,
+                    preco: produto.precoPromocional || produto.preco,
+                    imagem: produto.imagem,
+                    quantidade: 1
+                });
+            }
+
+            atualizarContador();
+            animarBotao(id);
+
+            // Salvar no localStorage
+            localStorage.setItem('carrinhoRaizFloral', JSON.stringify(carrinho));
+        }
+
+        function atualizarContador() {
+            const contador = document.getElementById('contadorCarrinho');
+            if (contador) {
+                const total = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+                contador.textContent = total;
+            }
+        }
+
+        function animarBotao(id) {
+            const botoes = document.querySelectorAll('.btn-comprar');
+            botoes.forEach(btn => {
+                if (parseInt(btn.dataset.id) === id) {
+                    btn.textContent = '✅ Adicionado!';
+                    btn.classList.add('adicionado');
+                    setTimeout(() => {
+                        btn.textContent = 'Adicionar ao carrinho';
+                        btn.classList.remove('adicionado');
+                    }, 2000);
+                }
+            });
+        }
+
+        // ============================================================
+        // CARREGAR CARRINHO DO LOCALSTORAGE
+        // ============================================================
+        function carregarCarrinho() {
+            const saved = localStorage.getItem('carrinhoRaizFloral');
+            if (saved) {
+                try {
+                    carrinho = JSON.parse(saved);
+                    atualizarContador();
+                } catch (e) {
+                    console.error('Erro ao carregar carrinho:', e);
+                }
+            }
+        }
+
+        // ============================================================
+        // MENU MOBILE
+        // ============================================================
+        function initMenuMobile() {
+            const toggle = document.getElementById('menuToggle');
+            const menuList = document.getElementById('menuList');
+
+            if (toggle && menuList) {
+                toggle.addEventListener('click', function() {
+                    menuList.classList.toggle('aberto');
+                    this.textContent = menuList.classList.contains('aberto') ? '✕' : '☰';
+                });
+
+                // Fechar ao clicar em um link
+                menuList.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuList.classList.remove('aberto');
+                        toggle.textContent = '☰';
+                    });
+                });
+            }
+        }
+
+        // ============================================================
+        // NEWSLETTER
+        // ============================================================
+        function initNewsletter() {
+            const form = document.getElementById('formNewsletter');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('emailNewsletter');
+                    if (email && email.value) {
+                        alert('🌸 Obrigado por assinar nossa newsletter!\nVocê receberá 10% off na primeira compra.');
+                        email.value = '';
+                    }
+                });
+            }
+        }
+
+        // ============================================================
+        // INICIALIZAR
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarCarrinho();
+            renderizarProdutos();
+            initMenuMobile();
+            initNewsletter();
+        });
+    </script>
+
+</body>
+</html>
