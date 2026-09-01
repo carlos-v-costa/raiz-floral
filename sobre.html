@@ -3,932 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre | Raiz Floral 🌸</title>
+    <title>Contato | Raiz Floral 🌸</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        /* ============================================================
-                   RESET E BASE
-                   ============================================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FEF9F4;
-            color: #5C4B3A;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* ============================================================
-                   VARIÁVEIS
-                   ============================================================ */
-        :root {
-            --dourado: #D4A373;
-            --dourado-claro: #F0D5B0;
-            --dourado-escuro: #C68A42;
-            --rosa: #F5D6D0;
-            --rosa-claro: #FEF9F4;
-            --rosa-escuro: #E8C4B8;
-            --verde: #A8C4A0;
-            --verde-claro: #D4E8D0;
-            --verde-escuro: #8AAF82;
-            --marrom: #5C4B3A;
-            --cinza: #8A7A6B;
-            --cinza-claro: #B5A898;
-            --branco: #FFFFFF;
-            --preto: #1A1510;
-
-            --sombra-suave: 0 4px 20px rgba(92, 75, 58, 0.08);
-            --sombra-media: 0 8px 30px rgba(92, 75, 58, 0.12);
-            --sombra-forte: 0 12px 40px rgba(92, 75, 58, 0.18);
-
-            --borda-pequena: 8px;
-            --borda-media: 16px;
-            --borda-grande: 24px;
-            --borda-arredondada: 50px;
-
-            --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transicao-lenta: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
-            --gradiente-dourado: linear-gradient(135deg, #D4A373, #C68A42);
-            --gradiente-rosa: linear-gradient(135deg, #F5D6D0, #FEF9F4);
-            --gradiente-hero: linear-gradient(135deg, #F5D6D0 0%, #FEF9F4 50%, #F0D5B0 100%);
-        }
-
-        /* ============================================================
-                   CONTAINER
-                   ============================================================ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ============================================================
-                   TIPOGRAFIA
-                   ============================================================ */
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--marrom);
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .subtitulo-secao {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--cinza);
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        /* ============================================================
-                   BOTÕES
-                   ============================================================ */
-        .botao-primario {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--gradiente-dourado);
-            color: var(--branco);
-            padding: 14px 32px;
-            border-radius: var(--borda-arredondada);
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: var(--transicao);
-            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .botao-primario::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .botao-primario:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .botao-primario:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 163, 115, 0.4);
-        }
-
-        .botao-voltar {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--dourado);
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transicao);
-            padding: 8px 16px;
-            border-radius: var(--borda-arredondada);
-        }
-
-        .botao-voltar:hover {
-            color: var(--dourado-escuro);
-            transform: translateX(-5px);
-            background: rgba(212, 163, 115, 0.1);
-        }
-
-        /* ============================================================
-                   LINHA DECORATIVA
-                   ============================================================ */
-        .linha-decorativa {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin: 16px auto 40px;
-        }
-
-        .linha-decorativa::before,
-        .linha-decorativa::after {
-            content: '';
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-        }
-
-        .linha-decorativa .flor {
-            font-size: 1.5rem;
-            color: var(--dourado);
-        }
-
-        /* ============================================================
-                   CABEÇALHO
-                   ============================================================ */
-        .cabecalho {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: var(--sombra-suave);
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 163, 115, 0.1);
-        }
-
-        .cabecalho .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .logo .icone {
-            font-size: 1.6rem;
-        }
-
-        .logo .texto {
-            color: var(--dourado);
-        }
-
-        .logo .texto-escuro {
-            color: var(--marrom);
-        }
-
-        .menu ul {
-            display: flex;
-            gap: 32px;
-        }
-
-        .menu ul li a {
-            color: var(--marrom);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transicao);
-            position: relative;
-            padding: 4px 0;
-        }
-
-        .menu ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--dourado);
-            transition: var(--transicao);
-            border-radius: 2px;
-        }
-
-        .menu ul li a:hover {
-            color: var(--dourado);
-        }
-
-        .menu ul li a:hover::after {
-            width: 100%;
-        }
-
-        .menu ul li a.ativo {
-            color: var(--dourado);
-        }
-
-        .menu ul li a.ativo::after {
-            width: 100%;
-        }
-
-        .acoes-cabecalho {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .link-carrinho {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            color: var(--marrom);
-            transition: var(--transicao);
-            font-size: 1.1rem;
-        }
-
-        .link-carrinho:hover {
-            color: var(--dourado);
-        }
-
-        .contador-carrinho {
-            background: var(--dourado);
-            color: var(--branco);
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 1px 8px;
-            border-radius: 50%;
-            min-width: 20px;
-            text-align: center;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--marrom);
-            padding: 4px;
-            transition: var(--transicao);
-        }
-
-        .menu-toggle:hover {
-            color: var(--dourado);
-        }
-
-        /* ============================================================
-                   BANNER DA PÁGINA
-                   ============================================================ */
-        .banner-pagina {
-            padding: 60px 0 40px;
-            background: var(--gradiente-hero);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-pagina::before {
-            content: '🌸';
-            position: absolute;
-            top: 10%;
-            right: 10%;
-            font-size: 6rem;
-            opacity: 0.06;
-            transform: rotate(15deg);
-        }
-
-        .banner-pagina::after {
-            content: '🌿';
-            position: absolute;
-            bottom: 10%;
-            left: 10%;
-            font-size: 5rem;
-            opacity: 0.06;
-            transform: rotate(-10deg);
-        }
-
-        .banner-pagina h1 {
-            position: relative;
-            z-index: 1;
-        }
-
-        .banner-pagina p {
-            color: var(--cinza);
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================================
-                   SOBRE - HISTÓRIA
-                   ============================================================ */
-        .historia {
-            padding: 60px 0;
-        }
-
-        .historia .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .historia-imagem img {
-            width: 100%;
-            border-radius: var(--borda-grande);
-            box-shadow: var(--sombra-media);
-            transition: var(--transicao-lenta);
-        }
-
-        .historia-imagem:hover img {
-            transform: scale(1.02);
-        }
-
-        .historia-texto h2 {
-            text-align: left;
-            margin-bottom: 16px;
-        }
-
-        .historia-texto h2 .destaque {
-            color: var(--dourado);
-        }
-
-        .historia-texto p {
-            color: var(--cinza);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .historia-texto .citacao {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--marrom);
-            padding: 20px 30px;
-            border-left: 4px solid var(--dourado);
-            background: rgba(245, 214, 208, 0.15);
-            border-radius: 0 12px 12px 0;
-            margin: 20px 0;
-        }
-
-        /* ============================================================
-                   MISSÃO, VISÃO, VALORES
-                   ============================================================ */
-        .missao-valores {
-            padding: 60px 0;
-            background: var(--rosa-claro);
-        }
-
-        .grade-missao {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .card-missao {
-            background: var(--branco);
-            padding: 32px 24px;
-            border-radius: var(--borda-media);
-            box-shadow: var(--sombra-suave);
-            text-align: center;
-            transition: var(--transicao);
-        }
-
-        .card-missao:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--sombra-media);
-        }
-
-        .card-missao .icone {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .card-missao h3 {
-            margin-bottom: 8px;
-        }
-
-        .card-missao p {
-            color: var(--cinza);
-            font-size: 0.95rem;
-        }
-
-        /* ============================================================
-                   VALORES
-                   ============================================================ */
-        .valores {
-            padding: 60px 0;
-        }
-
-        .grade-valores {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .card-valor {
-            text-align: center;
-            padding: 24px 16px;
-            border-radius: var(--borda-media);
-            transition: var(--transicao);
-            border: 2px solid transparent;
-        }
-
-        .card-valor:hover {
-            border-color: var(--dourado);
-            background: rgba(212, 163, 115, 0.05);
-            transform: translateY(-4px);
-        }
-
-        .card-valor .icone {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .card-valor h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .card-valor p {
-            font-size: 0.85rem;
-            color: var(--cinza);
-        }
-
-        /* ============================================================
-                   EQUIPE
-                   ============================================================ */
-        .equipe {
-            padding: 60px 0;
-            background: var(--gradiente-rosa);
-        }
-
-        .grade-equipe {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .card-equipe {
-            background: var(--branco);
-            border-radius: var(--borda-media);
-            overflow: hidden;
-            box-shadow: var(--sombra-suave);
-            transition: var(--transicao);
-            text-align: center;
-        }
-
-        .card-equipe:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--sombra-media);
-        }
-
-        .card-equipe .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 24px auto 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            background: var(--rosa-claro);
-            border: 4px solid var(--dourado-claro);
-            transition: var(--transicao);
-        }
-
-        .card-equipe:hover .avatar {
-            border-color: var(--dourado);
-            transform: scale(1.05);
-        }
-
-        .card-equipe .info {
-            padding: 20px 20px 24px;
-        }
-
-        .card-equipe .info h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            margin-bottom: 4px;
-        }
-
-        .card-equipe .info .cargo {
-            color: var(--dourado);
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .card-equipe .info .bio {
-            color: var(--cinza);
-            font-size: 0.85rem;
-            margin-top: 8px;
-        }
-
-        /* ============================================================
-                   LINHA DO TEMPO
-                   ============================================================ */
-        .linha-tempo {
-            padding: 60px 0;
-            background: var(--branco);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--dourado-claro);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 30px;
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            justify-content: flex-start;
-            padding-right: 0;
-            padding-left: 30px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 8px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--dourado);
-            transform: translateX(-50%);
-            border: 3px solid var(--branco);
-            box-shadow: var(--sombra-suave);
-            z-index: 1;
-        }
-
-        .timeline-conteudo {
-            background: var(--rosa-claro);
-            padding: 20px 24px;
-            border-radius: var(--borda-media);
-            max-width: 45%;
-            box-shadow: var(--sombra-suave);
-            transition: var(--transicao);
-        }
-
-        .timeline-conteudo:hover {
-            box-shadow: var(--sombra-media);
-            transform: translateY(-4px);
-        }
-
-        .timeline-conteudo .ano {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--dourado);
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .timeline-conteudo h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .timeline-conteudo p {
-            font-size: 0.9rem;
-            color: var(--cinza);
-        }
-
-        /* ============================================================
-                   VOLTAR PORTFÓLIO
-                   ============================================================ */
-        .voltar-portfolio {
-            padding: 20px 0;
-            background: var(--preto);
-            text-align: center;
-            border-top: 1px solid rgba(212, 163, 115, 0.1);
-        }
-
-        .voltar-portfolio .botao-voltar {
-            color: var(--dourado);
-            font-weight: 500;
-        }
-
-        .voltar-portfolio .botao-voltar:hover {
-            color: var(--dourado-claro);
-        }
-
-        /* ============================================================
-                   RODAPÉ
-                   ============================================================ */
-        .rodape {
-            background: var(--preto);
-            color: var(--branco);
-            padding: 50px 0 30px;
-        }
-
-        .grade-rodape {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .coluna-rodape h4 {
-            color: var(--dourado);
-            margin-bottom: 16px;
-            font-size: 1.1rem;
-        }
-
-        .coluna-rodape p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .coluna-rodape ul li {
-            margin-bottom: 10px;
-        }
-
-        .coluna-rodape ul li a {
-            color: rgba(255, 255, 255, 0.6);
-            transition: var(--transicao);
-            font-size: 0.95rem;
-        }
-
-        .coluna-rodape ul li a:hover {
-            color: var(--dourado);
-            padding-left: 4px;
-        }
-
-        .redes-sociais {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .redes-sociais a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.6);
-            transition: var(--transicao);
-            padding: 8px 16px;
-            border-radius: var(--borda-arredondada);
-            background: rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-        }
-
-        .redes-sociais a:hover {
-            color: var(--branco);
-            background: var(--dourado);
-            transform: translateY(-2px);
-        }
-
-        .rodape-inferior {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 0.85rem;
-        }
-
-        .rodape-inferior .coracao {
-            color: var(--rosa);
-        }
-
-        /* ============================================================
-                   RESPONSIVIDADE
-                   ============================================================ */
-        @media (max-width: 992px) {
-            .historia .container {
-                grid-template-columns: 1fr;
-            }
-
-            .grade-missao {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grade-valores {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grade-equipe {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grade-rodape {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .menu ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--branco);
-                padding: 20px 24px;
-                gap: 16px;
-                box-shadow: var(--sombra-forte);
-                border-radius: 0 0 var(--borda-media) var(--borda-media);
-            }
-
-            .menu ul.aberto {
-                display: flex;
-            }
-
-            .menu ul li a {
-                font-size: 1.1rem;
-                padding: 8px 0;
-                display: block;
-            }
-
-            .grade-missao {
-                grid-template-columns: 1fr;
-            }
-
-            .grade-valores {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .grade-equipe {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .grade-rodape {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .redes-sociais {
-                justify-content: center;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                justify-content: flex-start;
-                padding-right: 0;
-                padding-left: 50px;
-            }
-
-            .timeline-item:nth-child(odd) {
-                padding-left: 50px;
-                padding-right: 0;
-            }
-
-            .timeline-item::before {
-                left: 20px;
-            }
-
-            .timeline-conteudo {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .grade-valores {
-                grid-template-columns: 1fr;
-            }
-
-            .grade-equipe {
-                grid-template-columns: 1fr;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .logo {
-                font-size: 1.4rem;
-            }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            .historia-texto .citacao {
-                font-size: 1.1rem;
-                padding: 16px 20px;
-            }
-        }
-    </style>
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -948,8 +29,8 @@
                 <ul id="menuList">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="sobre.html" class="ativo">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html" class="ativo">Contato</a></li>
                 </ul>
             </nav>
 
@@ -966,247 +47,164 @@
     ============================================================ -->
     <section class="banner-pagina">
         <div class="container">
-            <h1>Sobre a Raiz Floral 🌸</h1>
+            <h1>Fale Conosco 📞</h1>
             <p class="subtitulo-secao">
-                Uma história de amor pela natureza e pela beleza
-            </p>
-            <div class="linha-decorativa">
-                <span class="flor">🌿</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    HISTÓRIA
-    ============================================================ -->
-    <section class="historia">
-        <div class="container">
-            <div class="historia-imagem">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=450&fit=crop&crop=center" alt="História da Raiz Floral">
-            </div>
-            <div class="historia-texto">
-                <h2>Uma <span class="destaque">jornada</span> de amor pela natureza</h2>
-                <p>
-                    A <strong>Raiz Floral</strong> nasceu em 2020, de um sonho compartilhado por três amigas que
-                    acreditavam que a beleza verdadeira vem da natureza. Cansadas de cosméticos cheios de
-                    químicos e substâncias agressivas, decidiram criar produtos que cuidam da pele e do planeta.
-                </p>
-                <p>
-                    Com uma pequena cozinha transformada em laboratório, começaram a pesquisar e testar
-                    fórmulas com ingredientes 100% naturais, colhidos de forma sustentável e produzidos
-                    com muito amor.
-                </p>
-                <div class="citacao">
-                    "Acreditamos que cada pessoa merece cuidar da sua pele com o que a terra tem de melhor.
-                    Por isso, cada produto é feito com ingredientes que respeitam você e o planeta."
-                </div>
-                <p>
-                    Hoje, a Raiz Floral é uma marca reconhecida por sua qualidade e compromisso com a
-                    sustentabilidade. Nossos produtos são feitos com ingredientes orgânicos, livres de
-                    cruelty-free e embalagens recicláveis.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    MISSÃO, VISÃO, VALORES
-    ============================================================ -->
-    <section class="missao-valores">
-        <div class="container">
-            <h2>Nossa Essência</h2>
-            <p class="subtitulo-secao">
-                O que nos move e nos inspira todos os dias
+                Estamos aqui para ajudar e ouvir você
             </p>
             <div class="linha-decorativa">
                 <span class="flor">🌸</span>
             </div>
+        </div>
+    </section>
 
-            <div class="grade-missao">
-                <div class="card-missao">
-                    <span class="icone">🎯</span>
-                    <h3>Missão</h3>
-                    <p>
-                        Criar cosméticos naturais de alta qualidade que promovam
-                        o bem-estar e a autoestima, respeitando o meio ambiente
-                        e valorizando a biodiversidade brasileira.
+    <!-- ============================================================
+    CONTATO - GRADE
+    ============================================================ -->
+    <section class="contato">
+        <div class="container">
+            <div class="grade-contato">
+
+                <!-- ===== FORMULÁRIO ===== -->
+                <div class="formulario-contato">
+                    <h3>Envie uma mensagem 💌</h3>
+                    <p class="descricao">
+                        Preencha os campos abaixo e retornaremos o mais rápido possível.
                     </p>
+
+                    <form id="formContato" novalidate>
+                        <div class="form-grupo">
+                            <label for="nome">Nome completo <span class="obrigatorio">*</span></label>
+                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                            <div class="mensagem-erro">Por favor, digite seu nome.</div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="email">E-mail <span class="obrigatorio">*</span></label>
+                            <input type="email" id="email" placeholder="Digite seu melhor e-mail" required>
+                            <div class="mensagem-erro">Por favor, digite um e-mail válido.</div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="assunto">Assunto <span class="obrigatorio">*</span></label>
+                            <select id="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="duvida">Dúvida sobre produtos</option>
+                                <option value="pedido">Informações sobre pedido</option>
+                                <option value="troca">Troca ou devolução</option>
+                                <option value="parceria">Parceria ou fornecedor</option>
+                                <option value="sugestao">Sugestão ou elogio</option>
+                                <option value="outro">Outro assunto</option>
+                            </select>
+                            <div class="mensagem-erro">Por favor, selecione um assunto.</div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="mensagem">Mensagem <span class="obrigatorio">*</span></label>
+                            <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                            <div class="mensagem-erro">Por favor, escreva sua mensagem.</div>
+                        </div>
+
+                        <button type="submit" class="botao-primario">
+                            📤 Enviar mensagem
+                        </button>
+                    </form>
                 </div>
-                <div class="card-missao">
-                    <span class="icone">👁️</span>
-                    <h3>Visão</h3>
-                    <p>
-                        Ser referência em cosméticos naturais sustentáveis no
-                        Brasil, inspirando pessoas a cuidarem de si e do planeta
-                        através de escolhas conscientes.
-                    </p>
+
+                <!-- ===== INFORMAÇÕES DE CONTATO ===== -->
+                <div class="info-contato">
+
+                    <div class="card-info">
+                        <div class="icone">📍</div>
+                        <div class="conteudo">
+                            <h4>Endereço</h4>
+                            <p>
+                                Rua das Flores, 123 - Jardim Botânico<br>
+                                São Paulo - SP, 01234-567
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="icone">📧</div>
+                        <div class="conteudo">
+                            <h4>E-mail</h4>
+                            <p>
+                                <a href="mailto:contato@raizfloral.com">contato@raizfloral.com</a>
+                            </p>
+                            <p style="font-size: 0.85rem; color: var(--cinza-claro);">
+                                Respondemos em até 24 horas
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="icone">📞</div>
+                        <div class="conteudo">
+                            <h4>Telefone</h4>
+                            <p>
+                                <a href="tel:+5511999999999">(11) 99999-9999</a>
+                            </p>
+                            <p style="font-size: 0.85rem; color: var(--cinza-claro);">
+                                Segunda a Sexta, 9h às 18h
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="icone">🕐</div>
+                        <div class="conteudo">
+                            <h4>Horário de Atendimento</h4>
+                            <p>
+                                Segunda a Sexta: 9h - 18h<br>
+                                Sábado: 9h - 13h<br>
+                                Domingo: Fechado
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ===== REDES SOCIAIS ===== -->
+                    <div class="redes-sociais-contato">
+                        <h4>📱 Redes Sociais</h4>
+                        <div class="grade-redes">
+                            <a href="#" class="btn-rede">
+                                <span class="icone">📸</span> Instagram
+                            </a>
+                            <a href="#" class="btn-rede">
+                                <span class="icone">👤</span> Facebook
+                            </a>
+                            <a href="#" class="btn-rede">
+                                <span class="icone">▶️</span> YouTube
+                            </a>
+                            <a href="#" class="btn-rede">
+                                <span class="icone">🐦</span> Twitter/X
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="card-missao">
-                    <span class="icone">💎</span>
-                    <h3>Valores</h3>
-                    <p>
-                        Sustentabilidade, transparência, qualidade, respeito
-                        à vida animal, valorização da natureza e amor pelo
-                        que fazemos.
-                    </p>
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    VALORES EM DETALHE
+    MAPA (FAKE)
     ============================================================ -->
-    <section class="valores">
+    <section class="mapa">
         <div class="container">
-            <h2>Nossos Valores</h2>
-            <p class="subtitulo-secao">
-                Princípios que guiam cada produto que criamos
-            </p>
-
-            <div class="grade-valores">
-                <div class="card-valor">
-                    <span class="icone">🌱</span>
-                    <h4>Naturalidade</h4>
-                    <p>Ingredientes 100% naturais, sem químicos agressivos</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">🐰</span>
-                    <h4>Cruelty-Free</h4>
-                    <p>Não testamos em animais e respeitamos todas as formas de vida</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">♻️</span>
-                    <h4>Sustentabilidade</h4>
-                    <p>Embalagens recicláveis e produção consciente</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">💛</span>
-                    <h4>Transparência</h4>
-                    <p>Você sabe exatamente o que está usando na sua pele</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">🤝</span>
-                    <h4>Comunidade</h4>
-                    <p>Valorizamos produtores locais e o comércio justo</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">❤️</span>
-                    <h4>Amor</h4>
-                    <p>Produzimos com amor e dedicação em cada etapa</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">🧘</span>
-                    <h4>Bem-Estar</h4>
-                    <p>Produtos que promovem saúde e equilíbrio</p>
-                </div>
-                <div class="card-valor">
-                    <span class="icone">🌟</span>
-                    <h4>Qualidade</h4>
-                    <p>Excelência em cada produto que criamos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    EQUIPE
-    ============================================================ -->
-    <section class="equipe">
-        <div class="container">
-            <h2>Quem faz a Raiz Floral</h2>
-            <p class="subtitulo-secao">
-                Pessoas apaixonadas pela natureza e pela beleza
-            </p>
-            <div class="linha-decorativa">
-                <span class="flor">🌸</span>
-            </div>
-
-            <div class="grade-equipe">
-                <div class="card-equipe">
-                    <div class="avatar">👩‍🔬</div>
-                    <div class="info">
-                        <h4>Ana Silva</h4>
-                        <p class="cargo">Fundadora & Química</p>
-                        <p class="bio">Especialista em cosméticos naturais e apaixonada por plantas.</p>
-                    </div>
-                </div>
-                <div class="card-equipe">
-                    <div class="avatar">👩‍🎨</div>
-                    <div class="info">
-                        <h4>Beatriz Santos</h4>
-                        <p class="cargo">Designer & Criadora</p>
-                        <p class="bio">Cria as embalagens e a identidade visual da marca.</p>
-                    </div>
-                </div>
-                <div class="card-equipe">
-                    <div class="avatar">👩‍🌾</div>
-                    <div class="info">
-                        <h4>Carla Oliveira</h4>
-                        <p class="cargo">Fornecedora & Produtora</p>
-                        <p class="bio">Responsável pela seleção de ingredientes naturais.</p>
-                    </div>
-                </div>
-                <div class="card-equipe">
-                    <div class="avatar">👩‍💻</div>
-                    <div class="info">
-                        <h4>Daniela Costa</h4>
-                        <p class="cargo">Marketing & Comunidade</p>
-                        <p class="bio">Conecta a marca com as clientes e cuida das redes sociais.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    LINHA DO TEMPO
-    ============================================================ -->
-    <section class="linha-tempo">
-        <div class="container">
-            <h2>Nossa Jornada</h2>
-            <p class="subtitulo-secao">
-                A história da Raiz Floral em momentos especiais
-            </p>
-            <div class="linha-decorativa">
-                <span class="flor">🌿</span>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-conteudo">
-                        <span class="ano">2020</span>
-                        <h4>🌱 O Sonho Começou</h4>
-                        <p>Três amigas começaram a criar cosméticos naturais na cozinha de casa.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-conteudo">
-                        <span class="ano">2021</span>
-                        <h4>🌸 Primeira Loja Virtual</h4>
-                        <p>Lançamos nosso site e começamos a vender para todo o Brasil.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-conteudo">
-                        <span class="ano">2022</span>
-                        <h4>🍯 Selo Vegano e Cruelty-Free</h4>
-                        <p>Recebemos certificações que comprovam nosso compromisso com os animais.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-conteudo">
-                        <span class="ano">2023</span>
-                        <h4>🌿 Embalagens Sustentáveis</h4>
-                        <p>Migramos para embalagens 100% recicláveis e reduzimos nossa pegada ecológica.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-conteudo">
-                        <span class="ano">2024</span>
-                        <h4>🌟 Mais de 10.000 Clientes</h4>
-                        <p>Celebramos o amor de milhares de pessoas pela nossa marca.</p>
-                    </div>
+            <div class="mapa-container">
+                <div class="mapa-placeholder">
+                    <span class="icone">📍</span>
+                    <h3>Estamos aqui!</h3>
+                    <p>Rua das Flores, 123 - São Paulo, SP</p>
+                    <p style="font-size: 0.85rem; color: var(--cinza); margin-top: 8px;">
+                        (Mapa interativo - substitua pelo Google Maps embed)
+                    </p>
                 </div>
             </div>
         </div>
@@ -1266,52 +264,120 @@
     </footer>
 
     <!-- ============================================================
-    JAVASCRIPT
+    TOAST (MENSAGEM DE SUCESSO)
+    ============================================================ -->
+    <div class="toast" id="toast">
+        <span class="icone">✅</span>
+        <div class="conteudo">
+            <h4>Mensagem enviada!</h4>
+            <p>Obrigado por entrar em contato. Responderemos em breve.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    SCRIPTS
     ============================================================ -->
     <script>
         // ============================================================
-        // CARRINHO
+        // VALIDAÇÃO DO FORMULÁRIO
         // ============================================================
-        let carrinho = [];
+        function validarCampo(campo) {
+            const grupo = campo.closest('.form-grupo');
+            const erro = grupo.querySelector('.mensagem-erro');
 
-        function atualizarContador() {
-            const contador = document.getElementById('contadorCarrinho');
-            if (contador) {
-                const total = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
-                contador.textContent = total;
+            if (campo.hasAttribute('required') && !campo.value.trim()) {
+                grupo.classList.add('erro');
+                return false;
             }
-        }
 
-        function carregarCarrinho() {
-            const saved = localStorage.getItem('carrinhoRaizFloral');
-            if (saved) {
-                try {
-                    carrinho = JSON.parse(saved);
-                    atualizarContador();
-                } catch (e) {
-                    console.error('Erro ao carregar carrinho:', e);
+            if (campo.type === 'email' && campo.value.trim()) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(campo.value.trim())) {
+                    grupo.classList.add('erro');
+                    return false;
                 }
             }
+
+            if (campo.tagName === 'SELECT' && !campo.value) {
+                grupo.classList.add('erro');
+                return false;
+            }
+
+            grupo.classList.remove('erro');
+            return true;
+        }
+
+        function initFormulario() {
+            const form = document.getElementById('formContato');
+            const campos = form.querySelectorAll('input, textarea, select');
+
+            campos.forEach(campo => {
+                campo.addEventListener('blur', function() {
+                    validarCampo(this);
+                });
+
+                campo.addEventListener('input', function() {
+                    if (this.closest('.form-grupo').classList.contains('erro')) {
+                        validarCampo(this);
+                    }
+                });
+
+                campo.addEventListener('change', function() {
+                    if (this.closest('.form-grupo').classList.contains('erro')) {
+                        validarCampo(this);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                let formValido = true;
+
+                campos.forEach(campo => {
+                    if (!validarCampo(campo)) {
+                        formValido = false;
+                    }
+                });
+
+                if (formValido) {
+                    const toast = document.getElementById('toast');
+                    toast.classList.add('mostrar');
+
+                    form.reset();
+
+                    document.querySelectorAll('.form-grupo.erro').forEach(el => {
+                        el.classList.remove('erro');
+                    });
+
+                    setTimeout(() => {
+                        toast.classList.remove('mostrar');
+                    }, 4000);
+                } else {
+                    const primeiroErro = document.querySelector('.form-grupo.erro');
+                    if (primeiroErro) {
+                        primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
         }
 
         // ============================================================
-        // MENU MOBILE
+        // MASCARAR TELEFONE
         // ============================================================
-        function initMenuMobile() {
-            const toggle = document.getElementById('menuToggle');
-            const menuList = document.getElementById('menuList');
-
-            if (toggle && menuList) {
-                toggle.addEventListener('click', function() {
-                    menuList.classList.toggle('aberto');
-                    this.textContent = menuList.classList.contains('aberto') ? '✕' : '☰';
-                });
-
-                menuList.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuList.classList.remove('aberto');
-                        toggle.textContent = '☰';
-                    });
+        function initMascaraTelefone() {
+            const telefone = document.getElementById('telefone');
+            if (telefone) {
+                telefone.addEventListener('input', function() {
+                    let valor = this.value.replace(/\D/g, '');
+                    if (valor.length > 0) {
+                        valor = valor.replace(/^(\d{2})(\d)/, '($1) $2');
+                        valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+                        if (valor.length > 15) {
+                            valor = valor.slice(0, 15);
+                        }
+                    }
+                    this.value = valor;
                 });
             }
         }
@@ -1320,10 +386,13 @@
         // INICIALIZAR
         // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
-            carregarCarrinho();
-            initMenuMobile();
+            initFormulario();
+            initMascaraTelefone();
         });
     </script>
+
+    <!-- Carregar scripts globais -->
+    <script src="script.js"></script>
 
 </body>
 </html>
