@@ -1,1 +1,1537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Raiz Floral 🌸</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================================
+                   RESET E BASE
+                   ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FEF9F4;
+            color: #5C4B3A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================================
+                   VARIÁVEIS
+                   ============================================================ */
+        :root {
+            --dourado: #D4A373;
+            --dourado-claro: #F0D5B0;
+            --dourado-escuro: #C68A42;
+            --rosa: #F5D6D0;
+            --rosa-claro: #FEF9F4;
+            --rosa-escuro: #E8C4B8;
+            --verde: #A8C4A0;
+            --verde-claro: #D4E8D0;
+            --verde-escuro: #8AAF82;
+            --marrom: #5C4B3A;
+            --cinza: #8A7A6B;
+            --cinza-claro: #B5A898;
+            --branco: #FFFFFF;
+            --preto: #1A1510;
+            --vermelho: #E74C3C;
+
+            --sombra-suave: 0 4px 20px rgba(92, 75, 58, 0.08);
+            --sombra-media: 0 8px 30px rgba(92, 75, 58, 0.12);
+            --sombra-forte: 0 12px 40px rgba(92, 75, 58, 0.18);
+
+            --borda-pequena: 8px;
+            --borda-media: 16px;
+            --borda-grande: 24px;
+            --borda-arredondada: 50px;
+
+            --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transicao-lenta: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+            --gradiente-dourado: linear-gradient(135deg, #D4A373, #C68A42);
+            --gradiente-rosa: linear-gradient(135deg, #F5D6D0, #FEF9F4);
+            --gradiente-hero: linear-gradient(135deg, #F5D6D0 0%, #FEF9F4 50%, #F0D5B0 100%);
+        }
+
+        /* ============================================================
+                   CONTAINER
+                   ============================================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+                   TIPOGRAFIA
+                   ============================================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marrom);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .subtitulo-secao {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--cinza);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        /* ============================================================
+                   BOTÕES
+                   ============================================================ */
+        .botao-primario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradiente-dourado);
+            color: var(--branco);
+            padding: 14px 32px;
+            border-radius: var(--borda-arredondada);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transicao);
+            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .botao-primario::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .botao-primario:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .botao-primario:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 163, 115, 0.4);
+        }
+
+        .botao-primario:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .botao-primario:disabled:hover {
+            transform: none;
+            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
+        }
+
+        .botao-secundario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--marrom);
+            padding: 12px 28px;
+            border-radius: var(--borda-arredondada);
+            border: 2px solid var(--dourado);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transicao);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .botao-secundario:hover {
+            background: var(--dourado);
+            color: var(--branco);
+            transform: translateY(-3px);
+        }
+
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dourado);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transicao);
+            padding: 8px 16px;
+            border-radius: var(--borda-arredondada);
+        }
+
+        .botao-voltar:hover {
+            color: var(--dourado-escuro);
+            transform: translateX(-5px);
+            background: rgba(212, 163, 115, 0.1);
+        }
+
+        .botao-remover {
+            background: none;
+            border: none;
+            color: var(--cinza-claro);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transicao);
+            padding: 4px 8px;
+            border-radius: var(--borda-pequena);
+        }
+
+        .botao-remover:hover {
+            color: var(--vermelho);
+            background: rgba(231, 76, 60, 0.08);
+        }
+
+        /* ============================================================
+                   LINHA DECORATIVA
+                   ============================================================ */
+        .linha-decorativa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 16px auto 40px;
+        }
+
+        .linha-decorativa::before,
+        .linha-decorativa::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+        }
+
+        .linha-decorativa .flor {
+            font-size: 1.5rem;
+            color: var(--dourado);
+        }
+
+        /* ============================================================
+                   CABEÇALHO
+                   ============================================================ */
+        .cabecalho {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--sombra-suave);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 163, 115, 0.1);
+        }
+
+        .cabecalho .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo .icone {
+            font-size: 1.6rem;
+        }
+
+        .logo .texto {
+            color: var(--dourado);
+        }
+
+        .logo .texto-escuro {
+            color: var(--marrom);
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .menu ul li a {
+            color: var(--marrom);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transicao);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .menu ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: var(--transicao);
+            border-radius: 2px;
+        }
+
+        .menu ul li a:hover {
+            color: var(--dourado);
+        }
+
+        .menu ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu ul li a.ativo {
+            color: var(--dourado);
+        }
+
+        .menu ul li a.ativo::after {
+            width: 100%;
+        }
+
+        .acoes-cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .link-carrinho {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--marrom);
+            transition: var(--transicao);
+            font-size: 1.1rem;
+        }
+
+        .link-carrinho:hover {
+            color: var(--dourado);
+        }
+
+        .contador-carrinho {
+            background: var(--dourado);
+            color: var(--branco);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 1px 8px;
+            border-radius: 50%;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--marrom);
+            padding: 4px;
+            transition: var(--transicao);
+        }
+
+        .menu-toggle:hover {
+            color: var(--dourado);
+        }
+
+        /* ============================================================
+                   BANNER DA PÁGINA
+                   ============================================================ */
+        .banner-pagina {
+            padding: 60px 0 40px;
+            background: var(--gradiente-hero);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-pagina::before {
+            content: '🛒';
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 6rem;
+            opacity: 0.06;
+            transform: rotate(15deg);
+        }
+
+        .banner-pagina::after {
+            content: '🌸';
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            font-size: 5rem;
+            opacity: 0.06;
+            transform: rotate(-10deg);
+        }
+
+        .banner-pagina h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-pagina p {
+            color: var(--cinza);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+                   CARRINHO - GRADE
+                   ============================================================ */
+        .carrinho-pagina {
+            padding: 40px 0 60px;
+        }
+
+        .grade-carrinho {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+        }
+
+        /* ============================================================
+                   LISTA DE ITENS
+                   ============================================================ */
+        .lista-itens {
+            background: var(--branco);
+            border-radius: var(--borda-media);
+            box-shadow: var(--sombra-suave);
+            overflow: hidden;
+        }
+
+        .lista-itens .cabecalho-lista {
+            padding: 20px 24px;
+            background: var(--rosa-claro);
+            border-bottom: 1px solid rgba(212, 163, 115, 0.1);
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 0.5fr;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--cinza);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item-carrinho {
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(212, 163, 115, 0.08);
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 0.5fr;
+            align-items: center;
+            transition: var(--transicao);
+        }
+
+        .item-carrinho:hover {
+            background: var(--rosa-claro);
+        }
+
+        .item-carrinho:last-child {
+            border-bottom: none;
+        }
+
+        .item-carrinho .produto-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .item-carrinho .produto-info .imagem {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--borda-pequena);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--rosa-claro);
+        }
+
+        .item-carrinho .produto-info .imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-carrinho .produto-info .detalhes h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .item-carrinho .produto-info .detalhes .preco-unitario {
+            font-size: 0.85rem;
+            color: var(--cinza);
+        }
+
+        .item-carrinho .quantidade {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .item-carrinho .quantidade button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--cinza-claro);
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transicao);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--marrom);
+        }
+
+        .item-carrinho .quantidade button:hover {
+            border-color: var(--dourado);
+            background: var(--dourado);
+            color: var(--branco);
+        }
+
+        .item-carrinho .quantidade span {
+            font-weight: 600;
+            font-size: 1rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .item-carrinho .subtotal {
+            font-weight: 700;
+            color: var(--dourado);
+            font-size: 1.05rem;
+        }
+
+        /* ============================================================
+                   CARRINHO VAZIO
+                   ============================================================ */
+        .carrinho-vazio {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .carrinho-vazio .icone {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .carrinho-vazio h3 {
+            margin-bottom: 8px;
+        }
+
+        .carrinho-vazio p {
+            color: var(--cinza);
+            margin-bottom: 24px;
+        }
+
+        /* ============================================================
+                   RESUMO DO PEDIDO
+                   ============================================================ */
+        .resumo-pedido {
+            background: var(--branco);
+            border-radius: var(--borda-media);
+            box-shadow: var(--sombra-suave);
+            padding: 28px 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .resumo-pedido h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--rosa-claro);
+        }
+
+        .resumo-pedido .linha-resumo {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: var(--cinza);
+            font-size: 0.95rem;
+        }
+
+        .resumo-pedido .linha-resumo.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--marrom);
+            border-top: 2px solid var(--dourado);
+            padding-top: 16px;
+            margin-top: 8px;
+        }
+
+        .resumo-pedido .linha-resumo.total .valor {
+            color: var(--dourado);
+        }
+
+        .resumo-pedido .linha-resumo .valor {
+            font-weight: 600;
+        }
+
+        /* Cupom */
+        .cupom-container {
+            margin: 16px 0 20px;
+        }
+
+        .cupom-container label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .cupom-container .input-grupo {
+            display: flex;
+            gap: 8px;
+        }
+
+        .cupom-container input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid var(--cinza-claro);
+            border-radius: var(--borda-pequena);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transicao);
+            background: var(--rosa-claro);
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .cupom-container input:focus {
+            border-color: var(--dourado);
+            box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.1);
+            background: var(--branco);
+        }
+
+        .cupom-container input::placeholder {
+            text-transform: none;
+            color: var(--cinza-claro);
+        }
+
+        .cupom-container .btn-aplicar {
+            padding: 10px 20px;
+            background: var(--marrom);
+            color: var(--branco);
+            border: none;
+            border-radius: var(--borda-pequena);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transicao);
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .cupom-container .btn-aplicar:hover {
+            background: var(--dourado);
+        }
+
+        .cupom-container .mensagem-cupom {
+            font-size: 0.8rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .cupom-container .mensagem-cupom.sucesso {
+            color: var(--verde-escuro);
+            display: block;
+        }
+
+        .cupom-container .mensagem-cupom.erro {
+            color: var(--vermelho);
+            display: block;
+        }
+
+        .resumo-pedido .botao-primario {
+            width: 100%;
+            justify-content: center;
+            padding: 16px;
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .resumo-pedido .botao-secundario {
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ============================================================
+                   TOAST (MENSAGEM DE SUCESSO)
+                   ============================================================ */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--verde-escuro);
+            color: var(--branco);
+            padding: 16px 24px;
+            border-radius: var(--borda-media);
+            box-shadow: var(--sombra-forte);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 9999;
+            max-width: 400px;
+        }
+
+        .toast.mostrar {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast .icone {
+            font-size: 1.5rem;
+        }
+
+        .toast .conteudo h4 {
+            font-family: 'Inter', sans-serif;
+            color: var(--branco);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .toast .conteudo p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* ============================================================
+                   VOLTAR PORTFÓLIO
+                   ============================================================ */
+        .voltar-portfolio {
+            padding: 20px 0;
+            background: var(--preto);
+            text-align: center;
+            border-top: 1px solid rgba(212, 163, 115, 0.1);
+        }
+
+        .voltar-portfolio .botao-voltar {
+            color: var(--dourado);
+            font-weight: 500;
+        }
+
+        .voltar-portfolio .botao-voltar:hover {
+            color: var(--dourado-claro);
+        }
+
+        /* ============================================================
+                   RODAPÉ
+                   ============================================================ */
+        .rodape {
+            background: var(--preto);
+            color: var(--branco);
+            padding: 50px 0 30px;
+        }
+
+        .grade-rodape {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .coluna-rodape h4 {
+            color: var(--dourado);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .coluna-rodape p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .coluna-rodape ul li {
+            margin-bottom: 10px;
+        }
+
+        .coluna-rodape ul li a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transicao);
+            font-size: 0.95rem;
+        }
+
+        .coluna-rodape ul li a:hover {
+            color: var(--dourado);
+            padding-left: 4px;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .redes-sociais a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transicao);
+            padding: 8px 16px;
+            border-radius: var(--borda-arredondada);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        .redes-sociais a:hover {
+            color: var(--branco);
+            background: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        .rodape-inferior {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .rodape-inferior .coracao {
+            color: var(--rosa);
+        }
+
+        /* ============================================================
+                   RESPONSIVIDADE
+                   ============================================================ */
+        @media (max-width: 992px) {
+            .grade-carrinho {
+                grid-template-columns: 1fr;
+            }
+
+            .resumo-pedido {
+                position: static;
+            }
+
+            .grade-rodape {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                padding: 20px 24px;
+                gap: 16px;
+                box-shadow: var(--sombra-forte);
+                border-radius: 0 0 var(--borda-media) var(--borda-media);
+            }
+
+            .menu ul.aberto {
+                display: flex;
+            }
+
+            .menu ul li a {
+                font-size: 1.1rem;
+                padding: 8px 0;
+                display: block;
+            }
+
+            .lista-itens .cabecalho-lista {
+                display: none;
+            }
+
+            .item-carrinho {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 16px;
+                border-bottom: 2px solid var(--rosa-claro);
+            }
+
+            .item-carrinho .produto-info {
+                gap: 12px;
+            }
+
+            .item-carrinho .produto-info .imagem {
+                width: 50px;
+                height: 50px;
+            }
+
+            .item-carrinho .quantidade {
+                justify-content: center;
+            }
+
+            .item-carrinho .subtotal {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .item-carrinho .botao-remover {
+                justify-self: center;
+            }
+
+            .resumo-pedido {
+                padding: 20px 16px;
+            }
+
+            .cupom-container .input-grupo {
+                flex-direction: column;
+            }
+
+            .grade-rodape {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .redes-sociais {
+                justify-content: center;
+            }
+
+            .toast {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .item-carrinho .produto-info .detalhes h4 {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    CABEÇALHO
+    ============================================================ -->
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="icone">🌸</span>
+                <span class="texto-escuro">Raiz</span>
+                <span class="texto">Floral</span>
+            </a>
+
+            <nav class="menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <ul id="menuList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="acoes-cabecalho">
+                <a href="carrinho.html" class="link-carrinho">
+                    🛒 <span class="contador-carrinho" id="contadorCarrinho">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    BANNER DA PÁGINA
+    ============================================================ -->
+    <section class="banner-pagina">
+        <div class="container">
+            <h1>Seu Carrinho 🛒</h1>
+            <p class="subtitulo-secao">
+                Revise seus produtos e finalize sua compra
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌸</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CARRINHO
+    ============================================================ -->
+    <section class="carrinho-pagina">
+        <div class="container">
+            <div class="grade-carrinho" id="gradeCarrinho">
+
+                <!-- ===== LISTA DE ITENS ===== -->
+                <div class="lista-itens" id="listaItens">
+                    <!-- Será preenchido pelo JavaScript -->
+                </div>
+
+                <!-- ===== RESUMO DO PEDIDO ===== -->
+                <div class="resumo-pedido" id="resumoPedido">
+                    <h3>📋 Resumo do Pedido</h3>
+
+                    <div class="linha-resumo">
+                        <span>Subtotal</span>
+                        <span class="valor" id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="linha-resumo">
+                        <span>Frete</span>
+                        <span class="valor" id="frete">R$ 0,00</span>
+                    </div>
+
+                    <div class="linha-resumo" id="linhaDesconto" style="display:none;">
+                        <span>Desconto</span>
+                        <span class="valor" id="descontoValor" style="color: var(--verde-escuro);">- R$ 0,00</span>
+                    </div>
+
+                    <div class="linha-resumo total">
+                        <span>Total</span>
+                        <span class="valor" id="total">R$ 0,00</span>
+                    </div>
+
+                    <!-- Cupom -->
+                    <div class="cupom-container">
+                        <label for="cupomInput">🎫 Cupom de desconto</label>
+                        <div class="input-grupo">
+                            <input type="text" id="cupomInput" placeholder="Digite o código" maxlength="20">
+                            <button class="btn-aplicar" id="btnAplicarCupom">Aplicar</button>
+                        </div>
+                        <div class="mensagem-cupom" id="mensagemCupom"></div>
+                    </div>
+
+                    <button class="botao-primario" id="btnFinalizar" disabled>
+                        🛒 Finalizar compra
+                    </button>
+
+                    <a href="produtos.html" class="botao-secundario">
+                        ← Continuar comprando
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    VOLTAR AO PORTFÓLIO
+    ============================================================ -->
+    <div class="voltar-portfolio">
+        <div class="container">
+            <a href="https://carlos-v-costa.github.io/portfolio/" class="botao-voltar">
+                ← Voltar ao Portfólio
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    RODAPÉ
+    ============================================================ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grade-rodape">
+                <div class="coluna-rodape">
+                    <h4>🌸 Raiz Floral</h4>
+                    <p>Cosméticos naturais para quem ama a pele e o planeta.</p>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Redes Sociais</h4>
+                    <div class="redes-sociais">
+                        <a href="#">📱 Instagram</a>
+                        <a href="#">📱 Facebook</a>
+                        <a href="#">📱 YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <p>© 2024 Raiz Floral - Feito com <span class="coracao">🌸</span> por <strong>Carlos V. Costa</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    TOAST
+    ============================================================ -->
+    <div class="toast" id="toast">
+        <span class="icone">✅</span>
+        <div class="conteudo">
+            <h4>Item removido!</h4>
+            <p>O produto foi removido do seu carrinho.</p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // CARRINHO - DADOS
+        // ============================================================
+        let carrinho = [];
+        let cupomAplicado = false;
+        let valorDesconto = 0;
+
+        // Cupons válidos
+        const cuponsValidos = {
+            'RAIZ10': { desconto: 10, tipo: 'porcentagem' },
+            'FLORAL20': { desconto: 20, tipo: 'porcentagem' },
+            'MEL15': { desconto: 15, tipo: 'porcentagem' },
+            'NATURAL5': { desconto: 5, tipo: 'porcentagem' }
+        };
+
+        // ============================================================
+        // CARREGAR CARRINHO
+        // ============================================================
+        function carregarCarrinho() {
+            const saved = localStorage.getItem('carrinhoRaizFloral');
+            if (saved) {
+                try {
+                    carrinho = JSON.parse(saved);
+                } catch (e) {
+                    console.error('Erro ao carregar carrinho:', e);
+                    carrinho = [];
+                }
+            }
+            renderizarCarrinho();
+            atualizarContador();
+        }
+
+        // ============================================================
+        // SALVAR CARRINHO
+        // ============================================================
+        function salvarCarrinho() {
+            localStorage.setItem('carrinhoRaizFloral', JSON.stringify(carrinho));
+        }
+
+        // ============================================================
+        // ATUALIZAR CONTADOR
+        // ============================================================
+        function atualizarContador() {
+            const contador = document.getElementById('contadorCarrinho');
+            if (contador) {
+                const total = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+                contador.textContent = total;
+            }
+
+            // Atualizar contador em todas as páginas (mesmo que não esteja na mesma aba)
+            try {
+                localStorage.setItem('carrinhoContador', JSON.stringify(
+                    carrinho.reduce((sum, item) => sum + item.quantidade, 0)
+                ));
+            } catch (e) {}
+        }
+
+        // ============================================================
+        // RENDERIZAR CARRINHO
+        // ============================================================
+        function renderizarCarrinho() {
+            const container = document.getElementById('listaItens');
+            const resumo = document.getElementById('resumoPedido');
+            const btnFinalizar = document.getElementById('btnFinalizar');
+
+            if (!container) return;
+
+            if (carrinho.length === 0) {
+                container.innerHTML = `
+                        <div class="carrinho-vazio">
+                            <span class="icone">🛒</span>
+                            <h3>Seu carrinho está vazio</h3>
+                            <p>Que tal explorar nossos produtos e encontrar algo especial para você?</p>
+                            <a href="produtos.html" class="botao-primario">Explorar produtos</a>
+                        </div>
+                    `;
+                btnFinalizar.disabled = true;
+                atualizarResumo();
+                return;
+            }
+
+            btnFinalizar.disabled = false;
+
+            let html = `
+                    <div class="cabecalho-lista">
+                        <span>Produto</span>
+                        <span style="text-align:center;">Quantidade</span>
+                        <span style="text-align:right;">Subtotal</span>
+                        <span style="text-align:center;">Remover</span>
+                    </div>
+                `;
+
+            carrinho.forEach((item, index) => {
+                const subtotal = item.preco * item.quantidade;
+                html += `
+                        <div class="item-carrinho" data-index="${index}">
+                            <div class="produto-info">
+                                <div class="imagem">
+                                    <img src="${item.imagem}" alt="${item.nome}" loading="lazy">
+                                </div>
+                                <div class="detalhes">
+                                    <h4>${item.nome}</h4>
+                                    <span class="preco-unitario">R$ ${item.preco.toFixed(2)} cada</span>
+                                </div>
+                            </div>
+                            <div class="quantidade">
+                                <button class="btn-diminuir" data-index="${index}">−</button>
+                                <span>${item.quantidade}</span>
+                                <button class="btn-aumentar" data-index="${index}">+</button>
+                            </div>
+                            <div class="subtotal">R$ ${subtotal.toFixed(2)}</div>
+                            <button class="botao-remover" data-index="${index}" title="Remover item">✕</button>
+                        </div>
+                    `;
+            });
+
+            container.innerHTML = html;
+
+            // Eventos dos botões
+            container.querySelectorAll('.btn-diminuir').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    diminuirQuantidade(index);
+                });
+            });
+
+            container.querySelectorAll('.btn-aumentar').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    aumentarQuantidade(index);
+                });
+            });
+
+            container.querySelectorAll('.botao-remover').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    removerItem(index);
+                });
+            });
+
+            atualizarResumo();
+        }
+
+        // ============================================================
+        // FUNÇÕES DO CARRINHO
+        // ============================================================
+        function diminuirQuantidade(index) {
+            if (carrinho[index].quantidade > 1) {
+                carrinho[index].quantidade--;
+            } else {
+                carrinho.splice(index, 1);
+                mostrarToast('🗑️', 'Item removido!', 'O produto foi removido do seu carrinho.');
+            }
+            salvarCarrinho();
+            renderizarCarrinho();
+            atualizarContador();
+            resetarCupom();
+        }
+
+        function aumentarQuantidade(index) {
+            carrinho[index].quantidade++;
+            salvarCarrinho();
+            renderizarCarrinho();
+            atualizarContador();
+            resetarCupom();
+        }
+
+        function removerItem(index) {
+            const nome = carrinho[index].nome;
+            carrinho.splice(index, 1);
+            salvarCarrinho();
+            renderizarCarrinho();
+            atualizarContador();
+            resetarCupom();
+            mostrarToast('🗑️', 'Item removido!', `${nome} foi removido do seu carrinho.`);
+        }
+
+        // ============================================================
+        // ATUALIZAR RESUMO
+        // ============================================================
+        function atualizarResumo() {
+            const subtotal = carrinho.reduce((sum, item) => sum + item.preco * item.quantidade, 0);
+            const frete = subtotal > 0 ? (subtotal >= 150 ? 0 : 15.90) : 0;
+            let total = subtotal + frete;
+            let desconto = 0;
+
+            if (cupomAplicado && valorDesconto > 0) {
+                if (typeof valorDesconto === 'number' && valorDesconto < 1) {
+                    // É porcentagem
+                    desconto = subtotal * valorDesconto;
+                } else {
+                    // É valor fixo
+                    desconto = Math.min(valorDesconto, subtotal);
+                }
+                total = total - desconto;
+            }
+
+            document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+            document.getElementById('frete').textContent = frete === 0 ? 'Grátis' : `R$ ${frete.toFixed(2)}`;
+            document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
+
+            const linhaDesconto = document.getElementById('linhaDesconto');
+            const descontoValor = document.getElementById('descontoValor');
+
+            if (cupomAplicado && desconto > 0) {
+                linhaDesconto.style.display = 'flex';
+                descontoValor.textContent = `- R$ ${desconto.toFixed(2)}`;
+            } else {
+                linhaDesconto.style.display = 'none';
+            }
+        }
+
+        // ============================================================
+        // CUPOM
+        // ============================================================
+        function resetarCupom() {
+            cupomAplicado = false;
+            valorDesconto = 0;
+            document.getElementById('cupomInput').value = '';
+            const mensagem = document.getElementById('mensagemCupom');
+            mensagem.className = 'mensagem-cupom';
+            mensagem.textContent = '';
+            atualizarResumo();
+        }
+
+        function aplicarCupom() {
+            const input = document.getElementById('cupomInput');
+            const codigo = input.value.trim().toUpperCase();
+            const mensagem = document.getElementById('mensagemCupom');
+
+            if (!codigo) {
+                mensagem.className = 'mensagem-cupom erro';
+                mensagem.textContent = '❌ Digite um código de cupom.';
+                return;
+            }
+
+            if (cupomAplicado) {
+                mensagem.className = 'mensagem-cupom erro';
+                mensagem.textContent = '❌ Já existe um cupom aplicado.';
+                return;
+            }
+
+            if (cuponsValidos[codigo]) {
+                const cupom = cuponsValidos[codigo];
+                cupomAplicado = true;
+                valorDesconto = cupom.desconto / 100;
+
+                mensagem.className = 'mensagem-cupom sucesso';
+                mensagem.textContent = `✅ Cupom "${codigo}" aplicado! ${cupom.desconto}% de desconto.`;
+                atualizarResumo();
+
+                // Desabilitar input e botão
+                input.disabled = true;
+                document.getElementById('btnAplicarCupom').disabled = true;
+            } else {
+                mensagem.className = 'mensagem-cupom erro';
+                mensagem.textContent = '❌ Código inválido. Tente novamente.';
+                setTimeout(() => {
+                    mensagem.className = 'mensagem-cupom';
+                    mensagem.textContent = '';
+                }, 3000);
+            }
+        }
+
+        // ============================================================
+        // FINALIZAR COMPRA
+        // ============================================================
+        function finalizarCompra() {
+            if (carrinho.length === 0) return;
+
+            const total = document.getElementById('total').textContent;
+
+            if (confirm(`🌸 Finalizar compra?\n\nTotal: ${total}\n\nDeseja confirmar seu pedido?`)) {
+                // Limpar carrinho
+                carrinho = [];
+                salvarCarrinho();
+                renderizarCarrinho();
+                atualizarContador();
+                resetarCupom();
+
+                mostrarToast(
+                    '🎉',
+                    'Pedido finalizado!',
+                    `Seu pedido no valor de ${total} foi confirmado. Em breve você receberá um e-mail.`
+                );
+
+                // Reabilitar cupom
+                const input = document.getElementById('cupomInput');
+                input.disabled = false;
+                document.getElementById('btnAplicarCupom').disabled = false;
+            }
+        }
+
+        // ============================================================
+        // TOAST
+        // ============================================================
+        function mostrarToast(icone, titulo, mensagem) {
+            const toast = document.getElementById('toast');
+            toast.querySelector('.icone').textContent = icone;
+            toast.querySelector('.conteudo h4').textContent = titulo;
+            toast.querySelector('.conteudo p').textContent = mensagem;
+
+            toast.classList.add('mostrar');
+            setTimeout(() => {
+                toast.classList.remove('mostrar');
+            }, 4000);
+        }
+
+        // ============================================================
+        // MENU MOBILE
+        // ============================================================
+        function initMenuMobile() {
+            const toggle = document.getElementById('menuToggle');
+            const menuList = document.getElementById('menuList');
+
+            if (toggle && menuList) {
+                toggle.addEventListener('click', function() {
+                    menuList.classList.toggle('aberto');
+                    this.textContent = menuList.classList.contains('aberto') ? '✕' : '☰';
+                });
+
+                menuList.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuList.classList.remove('aberto');
+                        toggle.textContent = '☰';
+                    });
+                });
+            }
+        }
+
+        // ============================================================
+        // INICIALIZAR
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarCarrinho();
+            initMenuMobile();
+
+            // Evento do botão aplicar cupom
+            document.getElementById('btnAplicarCupom').addEventListener('click', aplicarCupom);
+
+            // Enter no campo de cupom
+            document.getElementById('cupomInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    aplicarCupom();
+                }
+            });
+
+            // Evento do botão finalizar
+            document.getElementById('btnFinalizar').addEventListener('click', finalizarCompra);
+        });
+
+        // Atualizar contador em outras abas
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'carrinhoRaizFloral') {
+                carregarCarrinho();
+            }
+        });
+    </script>
+
+</body>
+</html>
