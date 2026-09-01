@@ -93,7 +93,7 @@
     ============================================================ -->
     <div class="voltar-portfolio">
         <div class="container">
-            <a href="https://carlos-v-costa.github.io/portfolio/" class="botao-voltar">
+            <a href="https://carlos-v-costa.github.io/meuportifolio/" class="botao-voltar">
                 🚀 Veja meus projetos
             </a>
         </div>
@@ -146,89 +146,270 @@
     ============================================================ -->
     <script>
         // ============================================================
-        // PRODUTOS - Catálogo completo
+        // PRODUTOS - Catálogo COMPLETO (23 produtos)
         // ============================================================
-        const produtos = [{
-            id: 1,
-            nome: "Hidratante Corporal Florescer",
-            descricao: "Hidratação profunda com manteiga de karité e óleo de jojoba",
-            preco: 89.90,
-            precoPromocional: 71.92,
-            imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
-            selos: ["Vegano", "Natural"],
-            categoria: "hidratantes",
-            destaque: true
-        }, {
-            id: 2,
-            nome: "Sabonete Artesanal Mel & Flor",
-            descricao: "Limpeza suave com mel orgânico e extratos florais",
-            preco: 34.90,
-            precoPromocional: null,
-            imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
-            selos: ["100% Natural"],
-            categoria: "sabonetes",
-            destaque: true
-        }, {
-            id: 3,
-            nome: "Óleo Essencial de Lavanda",
-            descricao: "Aroma relaxante e calmante para o bem-estar",
-            preco: 49.90,
-            precoPromocional: 39.90,
-            imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
-            selos: ["Orgânico", "Cruelty-Free"],
-            categoria: "oleos",
-            destaque: true
-        }, {
-            id: 4,
-            nome: "Perfume Floral Suave",
-            descricao: "Fragrância leve com notas de jasmim e rosas",
-            preco: 129.90,
-            precoPromocional: null,
-            imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
-            selos: ["Vegano"],
-            categoria: "perfumes",
-            destaque: true
-        }, {
-            id: 5,
-            nome: "Hidratante Facial Revitalizante",
-            descricao: "Hidratação leve com ácido hialurônico e vitamina C",
-            preco: 79.90,
-            precoPromocional: 63.92,
-            imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
-            selos: ["Vegano", "Cruelty-Free"],
-            categoria: "hidratantes",
-            destaque: false
-        }, {
-            id: 6,
-            nome: "Sabonete Esfoliante de Café",
-            descricao: "Esfoliação suave com grãos de café e óleo de coco",
-            preco: 39.90,
-            precoPromocional: null,
-            imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
-            selos: ["100% Natural"],
-            categoria: "sabonetes",
-            destaque: false
-        }, {
-            id: 7,
-            nome: "Óleo Essencial de Laranja Doce",
-            descricao: "Aroma cítrico revigorante e energizante",
-            preco: 45.90,
-            precoPromocional: 35.90,
-            imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
-            selos: ["Orgânico", "Natural"],
-            categoria: "oleos",
-            destaque: false
-        }, {
-            id: 8,
-            nome: "Perfume Amadeirado & Floral",
-            descricao: "Combinação de madeiras nobres com flores delicadas",
-            preco: 149.90,
-            precoPromocional: 119.90,
-            imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
-            selos: ["Vegano", "Cruelty-Free"],
-            categoria: "perfumes",
-            destaque: false
-        }];
+        const produtos = [
+            // ===== HIDRATANTES (7) =====
+            {
+                id: 1,
+                nome: "Hidratante Corporal Florescer",
+                descricao: "Hidratação profunda com manteiga de karité e óleo de jojoba",
+                preco: 89.90,
+                precoPromocional: 71.92,
+                imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Natural"],
+                categoria: "hidratantes",
+                destaque: true
+            },
+            {
+                id: 2,
+                nome: "Hidratante Corporal Coco & Baunilha",
+                descricao: "Hidratação profunda com óleo de coco e essência de baunilha",
+                preco: 89.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Natural", "Cruelty-Free"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+            {
+                id: 3,
+                nome: "Hidratante Facial Ácido Hialurônico",
+                descricao: "Hidratação intensa com ácido hialurônico e vitamina E",
+                preco: 109.90,
+                precoPromocional: 87.92,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Cruelty-Free"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+            {
+                id: 4,
+                nome: "Hidratante Noturno Calmante",
+                descricao: "Hidratação enquanto você dorme com camomila e aloe vera",
+                preco: 94.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural", "Vegano"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+            {
+                id: 5,
+                nome: "Hidratante Corporal Manteiga de Karité",
+                descricao: "Manteiga de karité pura para pele extremamente seca",
+                preco: 99.90,
+                precoPromocional: 79.90,
+                imagem: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+                selos: ["Natural", "Cruelty-Free"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+            {
+                id: 6,
+                nome: "Hidratante Facial Revitalizante",
+                descricao: "Hidratação leve com ácido hialurônico e vitamina C",
+                preco: 79.90,
+                precoPromocional: 63.92,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Cruelty-Free"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+            {
+                id: 7,
+                nome: "Hidratante Corporal Óleo de Amêndoas",
+                descricao: "Hidratação nutritiva com óleo de amêndoas doces",
+                preco: 84.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural", "Vegano"],
+                categoria: "hidratantes",
+                destaque: false
+            },
+
+            // ===== SABONETES (7) =====
+            {
+                id: 8,
+                nome: "Sabonete Artesanal Mel & Flor",
+                descricao: "Limpeza suave com mel orgânico e extratos florais",
+                preco: 34.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural"],
+                categoria: "sabonetes",
+                destaque: true
+            },
+            {
+                id: 9,
+                nome: "Sabonete Artesanal de Lavanda",
+                descricao: "Sabonete relaxante com óleo essencial de lavanda",
+                preco: 39.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural", "Vegano"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+            {
+                id: 10,
+                nome: "Sabonete Esfoliante de Café",
+                descricao: "Esfoliação suave com grãos de café e óleo de coco",
+                preco: 39.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+            {
+                id: 11,
+                nome: "Sabonete Esfoliante de Aveia e Mel",
+                descricao: "Esfoliação suave com aveia e mel hidratante",
+                preco: 44.90,
+                precoPromocional: 35.90,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["Natural", "Cruelty-Free"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+            {
+                id: 12,
+                nome: "Sabonete Líquido de Camomila",
+                descricao: "Limpeza suave com camomila para peles sensíveis",
+                preco: 49.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural", "Vegano"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+            {
+                id: 13,
+                nome: "Sabonete de Argila Rosa",
+                descricao: "Sabonete purificante com argila rosa e óleos essenciais",
+                preco: 49.90,
+                precoPromocional: 39.90,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Cruelty-Free"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+            {
+                id: 14,
+                nome: "Sabonete Artesanal de Alecrim",
+                descricao: "Sabonete revigorante com óleo essencial de alecrim",
+                preco: 37.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                selos: ["100% Natural", "Vegano"],
+                categoria: "sabonetes",
+                destaque: false
+            },
+
+            // ===== ÓLEOS ESSENCIAIS (5) =====
+            {
+                id: 15,
+                nome: "Óleo Essencial de Lavanda",
+                descricao: "Aroma relaxante e calmante para o bem-estar",
+                preco: 49.90,
+                precoPromocional: 39.90,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Orgânico", "Cruelty-Free"],
+                categoria: "oleos",
+                destaque: true
+            },
+            {
+                id: 16,
+                nome: "Óleo Essencial de Laranja Doce",
+                descricao: "Aroma cítrico revigorante e energizante",
+                preco: 45.90,
+                precoPromocional: 35.90,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Orgânico", "Natural"],
+                categoria: "oleos",
+                destaque: false
+            },
+            {
+                id: 17,
+                nome: "Óleo Essencial de Eucalipto",
+                descricao: "Aroma refrescante e descongestionante",
+                preco: 59.90,
+                precoPromocional: 47.90,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Orgânico", "100% Natural"],
+                categoria: "oleos",
+                destaque: false
+            },
+            {
+                id: 18,
+                nome: "Óleo Essencial de Tea Tree",
+                descricao: "Antisséptico e purificante para a pele",
+                preco: 69.90,
+                precoPromocional: 55.90,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Orgânico", "Cruelty-Free"],
+                categoria: "oleos",
+                destaque: false
+            },
+            {
+                id: 19,
+                nome: "Óleo Essencial de Ylang Ylang",
+                descricao: "Aroma floral e relaxante para o bem-estar",
+                preco: 79.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                selos: ["Natural", "Vegano"],
+                categoria: "oleos",
+                destaque: false
+            },
+
+            // ===== PERFUMES (4) =====
+            {
+                id: 20,
+                nome: "Perfume Floral Suave",
+                descricao: "Fragrância leve com notas de jasmim e rosas",
+                preco: 129.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano"],
+                categoria: "perfumes",
+                destaque: true
+            },
+            {
+                id: 21,
+                nome: "Perfume Rosa & Jasmim",
+                descricao: "Fragrância floral romântica com rosas e jasmim",
+                preco: 159.90,
+                precoPromocional: 129.90,
+                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Cruelty-Free"],
+                categoria: "perfumes",
+                destaque: false
+            },
+            {
+                id: 22,
+                nome: "Perfume Cítrico Fresco",
+                descricao: "Fragrância leve com notas de laranja e limão",
+                preco: 139.90,
+                precoPromocional: null,
+                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                selos: ["Natural", "Vegano"],
+                categoria: "perfumes",
+                destaque: false
+            },
+            {
+                id: 23,
+                nome: "Perfume Floral Suave - Edição Limitada",
+                descricao: "Edição limitada com flores silvestres e mel",
+                preco: 189.90,
+                precoPromocional: 159.90,
+                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                selos: ["Vegano", "Cruelty-Free"],
+                categoria: "perfumes",
+                destaque: true
+            }
+        ];
 
         // Expor para o script.js global
         window.listaProdutos = produtos;
