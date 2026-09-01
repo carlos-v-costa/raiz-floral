@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Raiz Floral 🌸</title>
+    <title>Sobre | Raiz Floral 🌸</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@
                 <ul id="menuList">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html" class="ativo">Contato</a></li>
+                    <li><a href="sobre.html" class="ativo">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
 
@@ -47,164 +47,247 @@
     ============================================================ -->
     <section class="banner-pagina">
         <div class="container">
-            <h1>Fale Conosco 📞</h1>
+            <h1>Sobre a Raiz Floral 🌸</h1>
             <p class="subtitulo-secao">
-                Estamos aqui para ajudar e ouvir você
+                Uma história de amor pela natureza e pela beleza
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌿</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    HISTÓRIA
+    ============================================================ -->
+    <section class="historia">
+        <div class="container">
+            <div class="historia-imagem">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=450&fit=crop&crop=center" alt="História da Raiz Floral">
+            </div>
+            <div class="historia-texto">
+                <h2>Uma <span class="destaque">jornada</span> de amor pela natureza</h2>
+                <p>
+                    A <strong>Raiz Floral</strong> nasceu em 2020, de um sonho compartilhado por três amigas que
+                    acreditavam que a beleza verdadeira vem da natureza. Cansadas de cosméticos cheios de
+                    químicos e substâncias agressivas, decidiram criar produtos que cuidam da pele e do planeta.
+                </p>
+                <p>
+                    Com uma pequena cozinha transformada em laboratório, começaram a pesquisar e testar
+                    fórmulas com ingredientes 100% naturais, colhidos de forma sustentável e produzidos
+                    com muito amor.
+                </p>
+                <div class="citacao">
+                    "Acreditamos que cada pessoa merece cuidar da sua pele com o que a terra tem de melhor.
+                    Por isso, cada produto é feito com ingredientes que respeitam você e o planeta."
+                </div>
+                <p>
+                    Hoje, a Raiz Floral é uma marca reconhecida por sua qualidade e compromisso com a
+                    sustentabilidade. Nossos produtos são feitos com ingredientes orgânicos, livres de
+                    cruelty-free e embalagens recicláveis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    MISSÃO, VISÃO, VALORES
+    ============================================================ -->
+    <section class="missao-valores">
+        <div class="container">
+            <h2>Nossa Essência</h2>
+            <p class="subtitulo-secao">
+                O que nos move e nos inspira todos os dias
             </p>
             <div class="linha-decorativa">
                 <span class="flor">🌸</span>
             </div>
-        </div>
-    </section>
 
-    <!-- ============================================================
-    CONTATO - GRADE
-    ============================================================ -->
-    <section class="contato">
-        <div class="container">
-            <div class="grade-contato">
-
-                <!-- ===== FORMULÁRIO ===== -->
-                <div class="formulario-contato">
-                    <h3>Envie uma mensagem 💌</h3>
-                    <p class="descricao">
-                        Preencha os campos abaixo e retornaremos o mais rápido possível.
+            <div class="grade-missao">
+                <div class="card-missao">
+                    <span class="icone">🎯</span>
+                    <h3>Missão</h3>
+                    <p>
+                        Criar cosméticos naturais de alta qualidade que promovam
+                        o bem-estar e a autoestima, respeitando o meio ambiente
+                        e valorizando a biodiversidade brasileira.
                     </p>
-
-                    <form id="formContato" novalidate>
-                        <div class="form-grupo">
-                            <label for="nome">Nome completo <span class="obrigatorio">*</span></label>
-                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
-                            <div class="mensagem-erro">Por favor, digite seu nome.</div>
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="email">E-mail <span class="obrigatorio">*</span></label>
-                            <input type="email" id="email" placeholder="Digite seu melhor e-mail" required>
-                            <div class="mensagem-erro">Por favor, digite um e-mail válido.</div>
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="assunto">Assunto <span class="obrigatorio">*</span></label>
-                            <select id="assunto" required>
-                                <option value="">Selecione um assunto</option>
-                                <option value="duvida">Dúvida sobre produtos</option>
-                                <option value="pedido">Informações sobre pedido</option>
-                                <option value="troca">Troca ou devolução</option>
-                                <option value="parceria">Parceria ou fornecedor</option>
-                                <option value="sugestao">Sugestão ou elogio</option>
-                                <option value="outro">Outro assunto</option>
-                            </select>
-                            <div class="mensagem-erro">Por favor, selecione um assunto.</div>
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="mensagem">Mensagem <span class="obrigatorio">*</span></label>
-                            <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                            <div class="mensagem-erro">Por favor, escreva sua mensagem.</div>
-                        </div>
-
-                        <button type="submit" class="botao-primario">
-                            📤 Enviar mensagem
-                        </button>
-                    </form>
                 </div>
-
-                <!-- ===== INFORMAÇÕES DE CONTATO ===== -->
-                <div class="info-contato">
-
-                    <div class="card-info">
-                        <div class="icone">📍</div>
-                        <div class="conteudo">
-                            <h4>Endereço</h4>
-                            <p>
-                                Rua das Flores, 123 - Jardim Botânico<br>
-                                São Paulo - SP, 01234-567
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card-info">
-                        <div class="icone">📧</div>
-                        <div class="conteudo">
-                            <h4>E-mail</h4>
-                            <p>
-                                <a href="mailto:contato@raizfloral.com">contato@raizfloral.com</a>
-                            </p>
-                            <p style="font-size: 0.85rem; color: var(--cinza-claro);">
-                                Respondemos em até 24 horas
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card-info">
-                        <div class="icone">📞</div>
-                        <div class="conteudo">
-                            <h4>Telefone</h4>
-                            <p>
-                                <a href="tel:+5511999999999">(11) 99999-9999</a>
-                            </p>
-                            <p style="font-size: 0.85rem; color: var(--cinza-claro);">
-                                Segunda a Sexta, 9h às 18h
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card-info">
-                        <div class="icone">🕐</div>
-                        <div class="conteudo">
-                            <h4>Horário de Atendimento</h4>
-                            <p>
-                                Segunda a Sexta: 9h - 18h<br>
-                                Sábado: 9h - 13h<br>
-                                Domingo: Fechado
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ===== REDES SOCIAIS ===== -->
-                    <div class="redes-sociais-contato">
-                        <h4>📱 Redes Sociais</h4>
-                        <div class="grade-redes">
-                            <a href="#" class="btn-rede">
-                                <span class="icone">📸</span> Instagram
-                            </a>
-                            <a href="#" class="btn-rede">
-                                <span class="icone">👤</span> Facebook
-                            </a>
-                            <a href="#" class="btn-rede">
-                                <span class="icone">▶️</span> YouTube
-                            </a>
-                            <a href="#" class="btn-rede">
-                                <span class="icone">🐦</span> Twitter/X
-                            </a>
-                        </div>
-                    </div>
-
+                <div class="card-missao">
+                    <span class="icone">👁️</span>
+                    <h3>Visão</h3>
+                    <p>
+                        Ser referência em cosméticos naturais sustentáveis no
+                        Brasil, inspirando pessoas a cuidarem de si e do planeta
+                        através de escolhas conscientes.
+                    </p>
                 </div>
-
+                <div class="card-missao">
+                    <span class="icone">💎</span>
+                    <h3>Valores</h3>
+                    <p>
+                        Sustentabilidade, transparência, qualidade, respeito
+                        à vida animal, valorização da natureza e amor pelo
+                        que fazemos.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    MAPA (FAKE)
+    VALORES EM DETALHE
     ============================================================ -->
-    <section class="mapa">
+    <section class="valores">
         <div class="container">
-            <div class="mapa-container">
-                <div class="mapa-placeholder">
-                    <span class="icone">📍</span>
-                    <h3>Estamos aqui!</h3>
-                    <p>Rua das Flores, 123 - São Paulo, SP</p>
-                    <p style="font-size: 0.85rem; color: var(--cinza); margin-top: 8px;">
-                        (Mapa interativo - substitua pelo Google Maps embed)
-                    </p>
+            <h2>Nossos Valores</h2>
+            <p class="subtitulo-secao">
+                Princípios que guiam cada produto que criamos
+            </p>
+
+            <div class="grade-valores">
+                <div class="card-valor">
+                    <span class="icone">🌱</span>
+                    <h4>Naturalidade</h4>
+                    <p>Ingredientes 100% naturais, sem químicos agressivos</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">🐰</span>
+                    <h4>Cruelty-Free</h4>
+                    <p>Não testamos em animais e respeitamos todas as formas de vida</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">♻️</span>
+                    <h4>Sustentabilidade</h4>
+                    <p>Embalagens recicláveis e produção consciente</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">💛</span>
+                    <h4>Transparência</h4>
+                    <p>Você sabe exatamente o que está usando na sua pele</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">🤝</span>
+                    <h4>Comunidade</h4>
+                    <p>Valorizamos produtores locais e o comércio justo</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">❤️</span>
+                    <h4>Amor</h4>
+                    <p>Produzimos com amor e dedicação em cada etapa</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">🧘</span>
+                    <h4>Bem-Estar</h4>
+                    <p>Produtos que promovem saúde e equilíbrio</p>
+                </div>
+                <div class="card-valor">
+                    <span class="icone">🌟</span>
+                    <h4>Qualidade</h4>
+                    <p>Excelência em cada produto que criamos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    EQUIPE
+    ============================================================ -->
+    <section class="equipe">
+        <div class="container">
+            <h2>Quem faz a Raiz Floral</h2>
+            <p class="subtitulo-secao">
+                Pessoas apaixonadas pela natureza e pela beleza
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌸</span>
+            </div>
+
+            <div class="grade-equipe">
+                <div class="card-equipe">
+                    <div class="avatar">👩‍🔬</div>
+                    <div class="info">
+                        <h4>Ana Silva</h4>
+                        <p class="cargo">Fundadora & Química</p>
+                        <p class="bio">Especialista em cosméticos naturais e apaixonada por plantas.</p>
+                    </div>
+                </div>
+                <div class="card-equipe">
+                    <div class="avatar">👩‍🎨</div>
+                    <div class="info">
+                        <h4>Beatriz Santos</h4>
+                        <p class="cargo">Designer & Criadora</p>
+                        <p class="bio">Cria as embalagens e a identidade visual da marca.</p>
+                    </div>
+                </div>
+                <div class="card-equipe">
+                    <div class="avatar">👩‍🌾</div>
+                    <div class="info">
+                        <h4>Carla Oliveira</h4>
+                        <p class="cargo">Fornecedora & Produtora</p>
+                        <p class="bio">Responsável pela seleção de ingredientes naturais.</p>
+                    </div>
+                </div>
+                <div class="card-equipe">
+                    <div class="avatar">👩‍💻</div>
+                    <div class="info">
+                        <h4>Daniela Costa</h4>
+                        <p class="cargo">Marketing & Comunidade</p>
+                        <p class="bio">Conecta a marca com as clientes e cuida das redes sociais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    LINHA DO TEMPO
+    ============================================================ -->
+    <section class="linha-tempo">
+        <div class="container">
+            <h2>Nossa Jornada</h2>
+            <p class="subtitulo-secao">
+                A história da Raiz Floral em momentos especiais
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌿</span>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-conteudo">
+                        <span class="ano">2020</span>
+                        <h4>🌱 O Sonho Começou</h4>
+                        <p>Três amigas começaram a criar cosméticos naturais na cozinha de casa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-conteudo">
+                        <span class="ano">2021</span>
+                        <h4>🌸 Primeira Loja Virtual</h4>
+                        <p>Lançamos nosso site e começamos a vender para todo o Brasil.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-conteudo">
+                        <span class="ano">2022</span>
+                        <h4>🍯 Selo Vegano e Cruelty-Free</h4>
+                        <p>Recebemos certificações que comprovam nosso compromisso com os animais.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-conteudo">
+                        <span class="ano">2023</span>
+                        <h4>🌿 Embalagens Sustentáveis</h4>
+                        <p>Migramos para embalagens 100% recicláveis e reduzimos nossa pegada ecológica.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-conteudo">
+                        <span class="ano">2024</span>
+                        <h4>🌟 Mais de 10.000 Clientes</h4>
+                        <p>Celebramos o amor de milhares de pessoas pela nossa marca.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -264,134 +347,8 @@
     </footer>
 
     <!-- ============================================================
-    TOAST (MENSAGEM DE SUCESSO)
-    ============================================================ -->
-    <div class="toast" id="toast">
-        <span class="icone">✅</span>
-        <div class="conteudo">
-            <h4>Mensagem enviada!</h4>
-            <p>Obrigado por entrar em contato. Responderemos em breve.</p>
-        </div>
-    </div>
-
-    <!-- ============================================================
     SCRIPTS
     ============================================================ -->
-    <script>
-        // ============================================================
-        // VALIDAÇÃO DO FORMULÁRIO
-        // ============================================================
-        function validarCampo(campo) {
-            const grupo = campo.closest('.form-grupo');
-            const erro = grupo.querySelector('.mensagem-erro');
-
-            if (campo.hasAttribute('required') && !campo.value.trim()) {
-                grupo.classList.add('erro');
-                return false;
-            }
-
-            if (campo.type === 'email' && campo.value.trim()) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(campo.value.trim())) {
-                    grupo.classList.add('erro');
-                    return false;
-                }
-            }
-
-            if (campo.tagName === 'SELECT' && !campo.value) {
-                grupo.classList.add('erro');
-                return false;
-            }
-
-            grupo.classList.remove('erro');
-            return true;
-        }
-
-        function initFormulario() {
-            const form = document.getElementById('formContato');
-            const campos = form.querySelectorAll('input, textarea, select');
-
-            campos.forEach(campo => {
-                campo.addEventListener('blur', function() {
-                    validarCampo(this);
-                });
-
-                campo.addEventListener('input', function() {
-                    if (this.closest('.form-grupo').classList.contains('erro')) {
-                        validarCampo(this);
-                    }
-                });
-
-                campo.addEventListener('change', function() {
-                    if (this.closest('.form-grupo').classList.contains('erro')) {
-                        validarCampo(this);
-                    }
-                });
-            });
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                let formValido = true;
-
-                campos.forEach(campo => {
-                    if (!validarCampo(campo)) {
-                        formValido = false;
-                    }
-                });
-
-                if (formValido) {
-                    const toast = document.getElementById('toast');
-                    toast.classList.add('mostrar');
-
-                    form.reset();
-
-                    document.querySelectorAll('.form-grupo.erro').forEach(el => {
-                        el.classList.remove('erro');
-                    });
-
-                    setTimeout(() => {
-                        toast.classList.remove('mostrar');
-                    }, 4000);
-                } else {
-                    const primeiroErro = document.querySelector('.form-grupo.erro');
-                    if (primeiroErro) {
-                        primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            });
-        }
-
-        // ============================================================
-        // MASCARAR TELEFONE
-        // ============================================================
-        function initMascaraTelefone() {
-            const telefone = document.getElementById('telefone');
-            if (telefone) {
-                telefone.addEventListener('input', function() {
-                    let valor = this.value.replace(/\D/g, '');
-                    if (valor.length > 0) {
-                        valor = valor.replace(/^(\d{2})(\d)/, '($1) $2');
-                        valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
-                        if (valor.length > 15) {
-                            valor = valor.slice(0, 15);
-                        }
-                    }
-                    this.value = valor;
-                });
-            }
-        }
-
-        // ============================================================
-        // INICIALIZAR
-        // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            initFormulario();
-            initMascaraTelefone();
-        });
-    </script>
-
-    <!-- Carregar scripts globais -->
     <script src="script.js"></script>
 
 </body>
