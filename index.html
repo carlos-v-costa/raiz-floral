@@ -324,6 +324,57 @@
     ============================================================ -->
     <script>
         // ============================================================
+        // SVG ILUSTRAÇÕES DO FLATICON
+        // ============================================================
+        const svgHidratante = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="70" width="100" height="90" rx="12" fill="#F5D6D0" stroke="#D4A373" stroke-width="2"/>
+            <rect x="65" y="55" width="70" height="18" rx="6" fill="#D4A373"/>
+            <circle cx="100" cy="140" r="18" fill="#D4A373" opacity="0.25"/>
+            <path d="M25 110 Q45 85 40 120" stroke="#A8C4A0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M175 110 Q155 85 160 120" stroke="#A8C4A0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="100" cy="95" r="8" fill="#D4A373" opacity="0.15"/>
+            <circle cx="85" cy="110" r="6" fill="#D4A373" opacity="0.12"/>
+            <circle cx="115" cy="110" r="6" fill="#D4A373" opacity="0.12"/>
+        </svg>`;
+
+        const svgSabonete = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="60" y="50" width="80" height="100" rx="16" fill="#D4E8D0" stroke="#A8C4A0" stroke-width="2"/>
+            <rect x="55" y="45" width="90" height="12" rx="4" fill="#A8C4A0"/>
+            <circle cx="100" cy="130" r="12" fill="#A8C4A0" opacity="0.2"/>
+            <circle cx="80" cy="80" r="6" fill="#F5D6D0" opacity="0.4"/>
+            <circle cx="120" cy="80" r="6" fill="#F5D6D0" opacity="0.4"/>
+            <circle cx="100" cy="95" r="5" fill="#F5D6D0" opacity="0.3"/>
+            <path d="M30 130 Q50 110 35 145" stroke="#D4A373" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M170 130 Q150 110 165 145" stroke="#D4A373" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>`;
+
+        const svgOleo = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="65" y="55" width="70" height="100" rx="8" fill="#F0D5B0" stroke="#D4A373" stroke-width="2"/>
+            <rect x="80" y="40" width="40" height="18" rx="4" fill="#D4A373"/>
+            <circle cx="100" cy="130" r="14" fill="#D4A373" opacity="0.2"/>
+            <circle cx="100" cy="90" r="6" fill="#D4A373" opacity="0.15"/>
+            <circle cx="90" cy="105" r="4" fill="#D4A373" opacity="0.12"/>
+            <circle cx="110" cy="105" r="4" fill="#D4A373" opacity="0.12"/>
+            <path d="M25 110 Q45 85 40 120" stroke="#A8C4A0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M175 110 Q155 85 160 120" stroke="#A8C4A0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M100 40 L100 25" stroke="#D4A373" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="100" cy="20" r="3" fill="#D4A373"/>
+        </svg>`;
+
+        const svgPerfume = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="55" y="60" width="90" height="100" rx="14" fill="#E8C4B8" stroke="#D4A373" stroke-width="2"/>
+            <rect x="75" y="40" width="50" height="22" rx="6" fill="#D4A373"/>
+            <rect x="85" y="25" width="30" height="18" rx="3" fill="#C68A42"/>
+            <circle cx="100" cy="140" r="16" fill="#D4A373" opacity="0.2"/>
+            <circle cx="85" cy="90" r="5" fill="#D4A373" opacity="0.15"/>
+            <circle cx="115" cy="90" r="5" fill="#D4A373" opacity="0.15"/>
+            <circle cx="100" cy="105" r="4" fill="#D4A373" opacity="0.12"/>
+            <path d="M25 120 Q45 95 40 130" stroke="#F5D6D0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M175 120 Q155 95 160 130" stroke="#F5D6D0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="100" cy="15" r="4" fill="#C68A42"/>
+        </svg>`;
+
+        // ============================================================
         // PRODUTOS - Catálogo COMPLETO (23 produtos)
         // ============================================================
         const produtos = [
@@ -334,7 +385,7 @@
                 descricao: "Hidratação profunda com manteiga de karité e óleo de jojoba",
                 preco: 89.90,
                 precoPromocional: 71.92,
-                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["Vegano", "Natural"],
                 categoria: "hidratantes",
                 destaque: true
@@ -345,7 +396,7 @@
                 descricao: "Hidratação profunda com óleo de coco e essência de baunilha",
                 preco: 89.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["Vegano", "Natural", "Cruelty-Free"],
                 categoria: "hidratantes",
                 destaque: false
@@ -356,7 +407,7 @@
                 descricao: "Hidratação intensa com ácido hialurônico e vitamina E",
                 preco: 109.90,
                 precoPromocional: 87.92,
-                imagem: "https://images.unsplash.com/photo-1617897903246-719242758050?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["Vegano", "Cruelty-Free"],
                 categoria: "hidratantes",
                 destaque: false
@@ -367,7 +418,7 @@
                 descricao: "Hidratação enquanto você dorme com camomila e aloe vera",
                 preco: 94.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1612817288484-6b91606f7d1f?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["100% Natural", "Vegano"],
                 categoria: "hidratantes",
                 destaque: false
@@ -378,7 +429,7 @@
                 descricao: "Manteiga de karité pura para pele extremamente seca",
                 preco: 99.90,
                 precoPromocional: 79.90,
-                imagem: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["Natural", "Cruelty-Free"],
                 categoria: "hidratantes",
                 destaque: false
@@ -389,7 +440,7 @@
                 descricao: "Hidratação leve com ácido hialurônico e vitamina C",
                 preco: 79.90,
                 precoPromocional: 63.92,
-                imagem: "https://images.unsplash.com/photo-1617897903246-719242758050?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["Vegano", "Cruelty-Free"],
                 categoria: "hidratantes",
                 destaque: false
@@ -400,7 +451,7 @@
                 descricao: "Hidratação nutritiva com óleo de amêndoas doces",
                 preco: 84.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+                imagem: svgHidratante,
                 selos: ["100% Natural", "Vegano"],
                 categoria: "hidratantes",
                 destaque: false
@@ -413,7 +464,7 @@
                 descricao: "Limpeza suave com mel orgânico e extratos florais",
                 preco: 34.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["100% Natural"],
                 categoria: "sabonetes",
                 destaque: true
@@ -424,7 +475,7 @@
                 descricao: "Sabonete relaxante com óleo essencial de lavanda",
                 preco: 39.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1601612628452-3b430f1b83af?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["100% Natural", "Vegano"],
                 categoria: "sabonetes",
                 destaque: false
@@ -435,7 +486,7 @@
                 descricao: "Esfoliação suave com grãos de café e óleo de coco",
                 preco: 39.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["100% Natural"],
                 categoria: "sabonetes",
                 destaque: false
@@ -446,7 +497,7 @@
                 descricao: "Esfoliação suave com aveia e mel hidratante",
                 preco: 44.90,
                 precoPromocional: 35.90,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["Natural", "Cruelty-Free"],
                 categoria: "sabonetes",
                 destaque: false
@@ -457,7 +508,7 @@
                 descricao: "Limpeza suave com camomila para peles sensíveis",
                 preco: 49.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["100% Natural", "Vegano"],
                 categoria: "sabonetes",
                 destaque: false
@@ -468,7 +519,7 @@
                 descricao: "Sabonete purificante com argila rosa e óleos essenciais",
                 preco: 49.90,
                 precoPromocional: 39.90,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["Vegano", "Cruelty-Free"],
                 categoria: "sabonetes",
                 destaque: false
@@ -479,7 +530,7 @@
                 descricao: "Sabonete revigorante com óleo essencial de alecrim",
                 preco: 37.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ed?w=300&h=300&fit=crop&crop=center",
+                imagem: svgSabonete,
                 selos: ["100% Natural", "Vegano"],
                 categoria: "sabonetes",
                 destaque: false
@@ -492,7 +543,7 @@
                 descricao: "Aroma relaxante e calmante para o bem-estar",
                 preco: 49.90,
                 precoPromocional: 39.90,
-                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                imagem: svgOleo,
                 selos: ["Orgânico", "Cruelty-Free"],
                 categoria: "oleos",
                 destaque: true
@@ -503,7 +554,7 @@
                 descricao: "Aroma cítrico revigorante e energizante",
                 preco: 45.90,
                 precoPromocional: 35.90,
-                imagem: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=300&h=300&fit=crop&crop=center",
+                imagem: svgOleo,
                 selos: ["Orgânico", "Natural"],
                 categoria: "oleos",
                 destaque: false
@@ -514,7 +565,7 @@
                 descricao: "Aroma refrescante e descongestionante",
                 preco: 59.90,
                 precoPromocional: 47.90,
-                imagem: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=300&h=300&fit=crop&crop=center",
+                imagem: svgOleo,
                 selos: ["Orgânico", "100% Natural"],
                 categoria: "oleos",
                 destaque: false
@@ -525,7 +576,7 @@
                 descricao: "Antisséptico e purificante para a pele",
                 preco: 69.90,
                 precoPromocional: 55.90,
-                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                imagem: svgOleo,
                 selos: ["Orgânico", "Cruelty-Free"],
                 categoria: "oleos",
                 destaque: false
@@ -536,7 +587,7 @@
                 descricao: "Aroma floral e relaxante para o bem-estar",
                 preco: 79.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1556228724-db3f7a0a0aae?w=300&h=300&fit=crop&crop=center",
+                imagem: svgOleo,
                 selos: ["Natural", "Vegano"],
                 categoria: "oleos",
                 destaque: false
@@ -549,7 +600,7 @@
                 descricao: "Fragrância leve com notas de jasmim e rosas",
                 preco: 129.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                imagem: svgPerfume,
                 selos: ["Vegano"],
                 categoria: "perfumes",
                 destaque: true
@@ -560,7 +611,7 @@
                 descricao: "Fragrância floral romântica com rosas e jasmim",
                 preco: 159.90,
                 precoPromocional: 129.90,
-                imagem: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=300&h=300&fit=crop&crop=center",
+                imagem: svgPerfume,
                 selos: ["Vegano", "Cruelty-Free"],
                 categoria: "perfumes",
                 destaque: false
@@ -571,7 +622,7 @@
                 descricao: "Fragrância leve com notas de laranja e limão",
                 preco: 139.90,
                 precoPromocional: null,
-                imagem: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=300&h=300&fit=crop&crop=center",
+                imagem: svgPerfume,
                 selos: ["Natural", "Vegano"],
                 categoria: "perfumes",
                 destaque: false
@@ -582,7 +633,7 @@
                 descricao: "Edição limitada com flores silvestres e mel",
                 preco: 189.90,
                 precoPromocional: 159.90,
-                imagem: "https://images.unsplash.com/photo-1585386959984-4158b9b21e2d?w=300&h=300&fit=crop&crop=center",
+                imagem: svgPerfume,
                 selos: ["Vegano", "Cruelty-Free"],
                 categoria: "perfumes",
                 destaque: true
@@ -615,8 +666,8 @@
                 const card = document.createElement('div');
                 card.className = 'card-produto';
                 card.innerHTML = `
-                        <div class="imagem">
-                            <img src="${produto.imagem}" alt="${produto.nome}" loading="lazy">
+                        <div class="imagem" style="display:flex;align-items:center;justify-content:center;background:var(--rosa-claro);padding:20px;">
+                            ${produto.imagem}
                             ${temPromocao ? `<span class="selo-oferta">-${desconto}%</span>` : ''}
                             ${produto.destaque && !temPromocao ? `<span class="selo-novo">Destaque</span>` : ''}
                         </div>
