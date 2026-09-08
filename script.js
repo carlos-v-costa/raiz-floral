@@ -298,3 +298,55 @@ window.addEventListener('storage', function(e) {
         renderizarCarrinho();
     }
 });
+
+// ============================================================
+// MODO ESCURO (DARK MODE)
+// ============================================================
+
+function toggleDarkMode() {
+    const html = document.documentElement;
+    const btn = document.getElementById('btnDarkMode');
+    
+    html.classList.toggle('dark-mode');
+    const isDark = html.classList.contains('dark-mode');
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+    
+    // Atualizar ícone do botão
+    if (btn) {
+        btn.innerHTML = isDark ? '☀️ Claro' : '🌙 Escuro';
+    }
+}
+
+function initDarkMode() {
+    const btn = document.getElementById('btnDarkMode');
+    if (!btn) return;
+    
+    // Verificar preferência salva
+    const saved = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Se tiver salvo, usar o salvo. Senão, usar preferência do sistema
+    if (saved !== null) {
+        if (saved === 'true') {
+            document.documentElement.classList.add('dark-mode');
+            btn.innerHTML = '☀️ Claro';
+        } else {
+            btn.innerHTML = '🌙 Escuro';
+        }
+    } else if (prefersDark) {
+        document.documentElement.classList.add('dark-mode');
+        btn.innerHTML = '☀️ Claro';
+    } else {
+        btn.innerHTML = '🌙 Escuro';
+    }
+    
+    btn.addEventListener('click', toggleDarkMode);
+}
+
+// Inicializar quando o DOM carregar
+document.addEventListener('DOMContentLoaded', function() {
+    // ... seu código existente ...
+    initDarkMode();
+});
