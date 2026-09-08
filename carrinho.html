@@ -207,12 +207,6 @@
 
             if (!container) return;
 
-            // Usar o carrinho global do script.js
-            if (typeof carrinho === 'undefined') {
-                console.error('Carrinho não carregado');
-                return;
-            }
-
             if (carrinho.length === 0) {
                 container.innerHTML = `
                     <div class="carrinho-vazio">
@@ -360,12 +354,7 @@
             cupomAplicado = false;
             valorDesconto = 0;
             const input = document.getElementById('cupomInput');
-            if (input) {
-                input.value = '';
-                input.disabled = false;
-            }
-            const btn = document.getElementById('btnAplicarCupom');
-            if (btn) btn.disabled = false;
+            if (input) input.value = '';
             const mensagem = document.getElementById('mensagemCupom');
             if (mensagem) {
                 mensagem.className = 'mensagem-cupom';
@@ -460,20 +449,14 @@
         // INICIALIZAR PÁGINA DO CARRINHO
         // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
-            // Garantir que o carrinho está carregado
-            if (typeof carregarCarrinho === 'function') {
-                carregarCarrinho();
-            }
-            
+            carregarCarrinho();
             renderizarCarrinho();
 
-            // Evento do botão aplicar cupom
             const btnCupom = document.getElementById('btnAplicarCupom');
             if (btnCupom) {
                 btnCupom.addEventListener('click', aplicarCupom);
             }
 
-            // Enter no campo de cupom
             const inputCupom = document.getElementById('cupomInput');
             if (inputCupom) {
                 inputCupom.addEventListener('keypress', function(e) {
@@ -484,19 +467,15 @@
                 });
             }
 
-            // Evento do botão finalizar
             const btnFinalizar = document.getElementById('btnFinalizar');
             if (btnFinalizar) {
                 btnFinalizar.addEventListener('click', finalizarCompra);
             }
         });
 
-        // Sincronizar em outras abas
         window.addEventListener('storage', function(e) {
             if (e.key === 'carrinhoRaizFloral') {
-                if (typeof carregarCarrinho === 'function') {
-                    carregarCarrinho();
-                }
+                carregarCarrinho();
                 renderizarCarrinho();
             }
         });
