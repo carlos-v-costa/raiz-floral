@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== TÍTULO ===== -->
+    <title>Página não encontrada | Raiz Floral 🌸</title>
+    
+    <!-- ===== SEO ===== -->
+    <meta name="description" content="Ops! Página não encontrada. Volte para a Raiz Floral e encontre cosméticos naturais incríveis para cuidar de você.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="Página não encontrada | Raiz Floral 🌸">
+    <meta property="og:description" content="Ops! Página não encontrada. Volte para a Raiz Floral.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carlos-v-costa.github.io/raiz-floral/404.html">
+    <meta property="og:image" content="https://carlos-v-costa.github.io/raiz-floral/img/og-image.jpg">
+    <meta property="og:site_name" content="Raiz Floral">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    
+    <!-- ===== Google Fonts ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ===== CSS Principal ===== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ============================================================
+           PÁGINA 404 - ESTILOS EXTRAS
+           ============================================================ */
+        .pagina-404 {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+            background: var(--gradiente-hero);
+            text-align: center;
+        }
+
+        .conteudo-404 {
+            max-width: 600px;
+        }
+
+        .conteudo-404 .numero {
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            font-weight: 700;
+            color: #C68A42;
+            line-height: 1;
+            opacity: 0.15;
+            position: relative;
+            display: inline-block;
+        }
+
+        .conteudo-404 .numero::after {
+            content: '🌸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            opacity: 1;
+            color: #C68A42;
+        }
+
+        .conteudo-404 h1 {
+            font-size: 2.8rem;
+            margin: 8px 0 16px;
+            color: #2C241E;
+        }
+
+        .conteudo-404 p {
+            font-size: 1.15rem;
+            color: #6B5D4E;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .conteudo-404 .mensagem-destaque {
+            background: rgba(198, 138, 66, 0.08);
+            border-left: 4px solid #C68A42;
+            padding: 16px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0 32px;
+            text-align: left;
+        }
+
+        .conteudo-404 .mensagem-destaque p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #3D3228;
+        }
+
+        .conteudo-404 .botoes-404 {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .conteudo-404 .botoes-404 .botao-primario,
+        .conteudo-404 .botoes-404 .botao-secundario {
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .conteudo-404 .links-uteis {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(198, 138, 66, 0.15);
+        }
+
+        .conteudo-404 .links-uteis h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #6B5D4E;
+            margin-bottom: 12px;
+        }
+
+        .conteudo-404 .links-uteis .grade-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .conteudo-404 .links-uteis .grade-links a {
+            color: #C68A42;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transicao);
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .conteudo-404 .links-uteis .grade-links a:hover {
+            color: #B07A35;
+            border-bottom-color: #C68A42;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conteudo-404 .numero {
+                font-size: 8rem;
+            }
+
+            .conteudo-404 .numero::after {
+                font-size: 3.5rem;
+            }
+
+            .conteudo-404 h1 {
+                font-size: 2rem;
+            }
+
+            .conteudo-404 .botoes-404 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .conteudo-404 .botoes-404 .botao-primario,
+            .conteudo-404 .botoes-404 .botao-secundario {
+                min-width: unset;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .conteudo-404 .links-uteis .grade-links {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conteudo-404 .numero {
+                font-size: 6rem;
+            }
+
+            .conteudo-404 .numero::after {
+                font-size: 2.8rem;
+            }
+
+            .conteudo-404 h1 {
+                font-size: 1.6rem;
+            }
+
+            .conteudo-404 p {
+                font-size: 1rem;
+            }
+
+            .conteudo-404 .mensagem-destaque {
+                padding: 12px 16px;
+            }
+
+            .conteudo-404 .mensagem-destaque p {
+                font-size: 0.85rem;
+            }
+
+            .conteudo-404 .links-uteis .grade-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    CABEÇALHO
+    ============================================================ -->
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="icone">🌸</span>
+                <span class="texto-escuro">Raiz</span>
+                <span class="texto">Floral</span>
+            </a>
+
+            <nav class="menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <ul id="menuList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="acoes-cabecalho">
+                <a href="carrinho.html" class="link-carrinho">
+                    🛒 <span class="contador-carrinho" id="contadorCarrinho">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    CONTEÚDO 404
+    ============================================================ -->
+    <main class="pagina-404">
+        <div class="container">
+            <div class="conteudo-404">
+
+                <div class="numero">404</div>
+
+                <h1>Ops! Página não encontrada</h1>
+
+                <p>
+                    Parece que você se perdeu no caminho das flores 🌸
+                </p>
+
+                <p style="color: #A89888; font-size: 0.95rem;">
+                    A página que você procura pode ter sido removida,
+                    renomeada ou estar temporariamente indisponível.
+                </p>
+
+                <div class="mensagem-destaque">
+                    <p>
+                        <strong>💡 Dica:</strong> Que tal explorar nossos produtos
+                        ou conhecer um pouco mais sobre a nossa história?
+                    </p>
+                </div>
+
+                <div class="botoes-404">
+                    <a href="index.html" class="botao-primario">
+                        🏠 Voltar ao início
+                    </a>
+                    <a href="produtos.html" class="botao-secundario">
+                        🛍️ Explorar produtos
+                    </a>
+                </div>
+
+                <div class="links-uteis">
+                    <h4>🔗 Páginas úteis</h4>
+                    <div class="grade-links">
+                        <a href="sobre.html">Sobre nós</a>
+                        <a href="contato.html">Fale conosco</a>
+                        <a href="carrinho.html">Meu carrinho</a>
+                        <a href="https://carlos-v-costa.github.io/meuportifolio/" target="_blank">🚀 Portfólio</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================================
+    RODAPÉ
+    ============================================================ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grade-rodape">
+                <div class="coluna-rodape">
+                    <h4>🌸 Raiz Floral</h4>
+                    <p>Cosméticos naturais para quem ama a pele e o planeta.</p>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="contato.html">Fale Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Redes Sociais</h4>
+                    <div class="redes-sociais">
+                        <a href="#">📱 Instagram</a>
+                        <a href="#">📱 Facebook</a>
+                        <a href="#">📱 YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <p>© 2024 Raiz Floral - Feito com <span class="coracao">🌸</span> por <strong>Carlos V. Costa</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // CARRINHO - GLOBAL
+        // ============================================================
+        let carrinho = [];
+
+        function carregarCarrinho() {
+            const dados = localStorage.getItem('carrinhoRaizFloral');
+            if (dados) {
+                try {
+                    carrinho = JSON.parse(dados);
+                } catch {
+                    carrinho = [];
+                }
+            } else {
+                carrinho = [];
+            }
+            atualizarContador();
+        }
+
+        function salvarCarrinho() {
+            localStorage.setItem('carrinhoRaizFloral', JSON.stringify(carrinho));
+            atualizarContador();
+        }
+
+        function atualizarContador() {
+            const contador = document.getElementById('contadorCarrinho');
+            if (contador) {
+                const total = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+                contador.textContent = total;
+            }
+        }
+
+        // ============================================================
+        // MENU MOBILE
+        // ============================================================
+        function initMenuMobile() {
+            const toggle = document.getElementById('menuToggle');
+            const menuList = document.getElementById('menuList');
+
+            if (toggle && menuList) {
+                toggle.addEventListener('click', function() {
+                    menuList.classList.toggle('aberto');
+                    this.textContent = menuList.classList.contains('aberto') ? '✕' : '☰';
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!toggle.contains(e.target) && !menuList.contains(e.target)) {
+                        menuList.classList.remove('aberto');
+                        toggle.textContent = '☰';
+                    }
+                });
+            }
+        }
+
+        // ============================================================
+        // INICIALIZAR
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarCarrinho();
+            initMenuMobile();
+        });
+    </script>
+
+</body>
+</html>
