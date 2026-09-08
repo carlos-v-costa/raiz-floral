@@ -48,31 +48,35 @@
     <!-- ============================================================
     CABEÇALHO
     ============================================================ -->
-    <header class="cabecalho">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="icone">🌸</span>
-                <span class="texto-escuro">Raiz</span>
-                <span class="texto">Floral</span>
+<header class="cabecalho">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <span class="icone">🌸</span>
+            <span class="texto-escuro">Raiz</span>
+            <span class="texto">Floral</span>
+        </a>
+
+        <nav class="menu">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+            <ul id="menuList">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html" class="ativo">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="acoes-cabecalho">
+            <button id="btnDarkMode" class="btn-dark-mode" aria-label="Alternar modo escuro">
+                🌙 Escuro
+            </button>
+            <a href="carrinho.html" class="link-carrinho">
+                🛒
+                <span class="contador-carrinho" id="contadorCarrinho">0</span>
             </a>
-
-            <nav class="menu">
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
-                <ul id="menuList">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="sobre.html" class="ativo">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-
-            <div class="acoes-cabecalho">
-                <a href="carrinho.html" class="link-carrinho">
-                    🛒 <span class="contador-carrinho" id="contadorCarrinho">0</span>
-                </a>
-            </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- ============================================================
     BANNER DA PÁGINA
