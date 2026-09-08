@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== TÍTULO ===== -->
+    <title>FAQ | Raiz Floral 🌸</title>
+    
+    <!-- ===== SEO BÁSICO ===== -->
+    <meta name="description" content="Dúvidas frequentes sobre a Raiz Floral. Produtos, envios, trocas, devoluções e muito mais. Tire suas perguntas sobre cosméticos naturais.">
+    <meta name="keywords" content="faq, perguntas frequentes, dúvidas, cosméticos naturais, envio, troca, devolução, pagamento">
+    <meta name="author" content="Raiz Floral">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="FAQ | Raiz Floral 🌸">
+    <meta property="og:description" content="Dúvidas frequentes sobre a Raiz Floral. Produtos, envios, trocas, devoluções e muito mais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carlos-v-costa.github.io/raiz-floral/faq.html">
+    <meta property="og:image" content="https://carlos-v-costa.github.io/raiz-floral/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Raiz Floral">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ | Raiz Floral 🌸">
+    <meta name="twitter:description" content="Dúvidas frequentes sobre a Raiz Floral. Produtos, envios, trocas, devoluções e muito mais.">
+    <meta name="twitter:image" content="https://carlos-v-costa.github.io/raiz-floral/img/og-image.jpg">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    
+    <!-- ===== Google Fonts ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ===== CSS Principal ===== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ============================================================
+           FAQ - ESTILOS EXTRAS
+           ============================================================ */
+        
+        /* Busca da FAQ */
+        .faq-busca {
+            max-width: 600px;
+            margin: -20px auto 40px;
+            padding: 0 16px;
+        }
+        
+        .faq-busca input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 2px solid var(--cinza-claro);
+            border-radius: var(--borda-arredondada);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background: var(--branco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236B5D4E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E") no-repeat 16px center;
+            transition: var(--transicao);
+            outline: none;
+            color: var(--marrom);
+        }
+        
+        .faq-busca input:focus {
+            border-color: var(--dourado);
+            box-shadow: 0 0 0 4px rgba(198, 138, 66, 0.1);
+        }
+        
+        .faq-busca input::placeholder {
+            color: var(--cinza-claro);
+        }
+        
+        /* Grid da FAQ */
+        .grade-faq {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .categoria-faq {
+            background: var(--branco);
+            border-radius: var(--borda-media);
+            padding: 28px 24px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+        }
+        
+        .categoria-faq:hover {
+            box-shadow: var(--sombra-media);
+            transform: translateY(-4px);
+        }
+        
+        .categoria-faq .titulo-categoria {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dourado);
+            margin-bottom: 4px;
+        }
+        
+        .categoria-faq h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--marrom);
+        }
+        
+        /* Item da FAQ */
+        .item-faq {
+            border-bottom: 1px solid rgba(198, 138, 66, 0.1);
+            padding: 12px 0;
+        }
+        
+        .item-faq:last-child {
+            border-bottom: none;
+        }
+        
+        .item-faq .pergunta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            padding: 4px 0;
+            user-select: none;
+            transition: var(--transicao);
+        }
+        
+        .item-faq .pergunta:hover {
+            color: var(--dourado);
+        }
+        
+        .item-faq .pergunta h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--marrom);
+            transition: var(--transicao);
+            margin: 0;
+        }
+        
+        .item-faq .pergunta:hover h4 {
+            color: var(--dourado);
+        }
+        
+        .item-faq .pergunta .icone-toggle {
+            font-size: 1.2rem;
+            color: var(--dourado);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+        
+        .item-faq .pergunta .icone-toggle.aberto {
+            transform: rotate(180deg);
+        }
+        
+        .item-faq .resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease,
+                        padding 0.3s ease;
+            opacity: 0;
+            padding: 0;
+        }
+        
+        .item-faq .resposta.aberto {
+            max-height: 300px;
+            opacity: 1;
+            padding: 12px 0 4px;
+        }
+        
+        .item-faq .resposta p {
+            font-size: 0.92rem;
+            color: var(--cinza);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        /* Categorias rápidas */
+        .categorias-rapidas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .categorias-rapidas .btn-cat {
+            padding: 8px 20px;
+            border: 2px solid var(--cinza-claro);
+            border-radius: var(--borda-arredondada);
+            background: transparent;
+            color: var(--cinza);
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transicao);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .categorias-rapidas .btn-cat:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+        }
+        
+        .categorias-rapidas .btn-cat.ativo {
+            border-color: var(--dourado);
+            background: var(--dourado);
+            color: var(--branco);
+        }
+        
+        /* Sem resultados */
+        .sem-resultados-faq {
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+        
+        .sem-resultados-faq .icone {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        .sem-resultados-faq h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--marrom);
+            margin-bottom: 4px;
+        }
+        
+        .sem-resultados-faq p {
+            color: var(--cinza);
+        }
+        
+        /* Contato rápido */
+        .faq-contato-rapido {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+            background: var(--rosa-claro);
+            border-radius: var(--borda-media);
+        }
+        
+        .faq-contato-rapido h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--marrom);
+        }
+        
+        .faq-contato-rapido p {
+            color: var(--cinza);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        
+        .faq-contato-rapido .botao-primario {
+            padding: 12px 32px;
+            font-size: 0.95rem;
+        }
+        
+        /* Dark mode */
+        html.dark-mode .faq-busca input {
+            background-color: #3D3228;
+            border-color: #6B5D4E;
+            color: #D4C8C0;
+        }
+        
+        html.dark-mode .faq-busca input:focus {
+            border-color: #D4A373;
+        }
+        
+        html.dark-mode .categoria-faq {
+            background: #2C241E;
+        }
+        
+        html.dark-mode .categoria-faq h3 {
+            color: #D4C8C0;
+        }
+        
+        html.dark-mode .item-faq .pergunta h4 {
+            color: #D4C8C0;
+        }
+        
+        html.dark-mode .item-faq .resposta p {
+            color: #A89888;
+        }
+        
+        html.dark-mode .faq-contato-rapido {
+            background: #3D3228;
+        }
+        
+        html.dark-mode .faq-contato-rapido h4 {
+            color: #D4C8C0;
+        }
+        
+        html.dark-mode .faq-contato-rapido p {
+            color: #A89888;
+        }
+        
+        html.dark-mode .categorias-rapidas .btn-cat {
+            border-color: #6B5D4E;
+            color: #A89888;
+        }
+        
+        html.dark-mode .categorias-rapidas .btn-cat:hover {
+            border-color: #D4A373;
+            color: #D4A373;
+        }
+        
+        html.dark-mode .categorias-rapidas .btn-cat.ativo {
+            border-color: #D4A373;
+            background: #D4A373;
+            color: #2C241E;
+        }
+        
+        html.dark-mode .sem-resultados-faq h4 {
+            color: #D4C8C0;
+        }
+        
+        html.dark-mode .sem-resultados-faq p {
+            color: #A89888;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .grade-faq {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .categoria-faq {
+                padding: 20px 16px;
+            }
+            
+            .item-faq .pergunta h4 {
+                font-size: 0.9rem;
+            }
+            
+            .categorias-rapidas {
+                gap: 8px;
+            }
+            
+            .categorias-rapidas .btn-cat {
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    CABEÇALHO
+    ============================================================ -->
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="icone">🌸</span>
+                <span class="texto-escuro">Raiz</span>
+                <span class="texto">Floral</span>
+            </a>
+
+            <nav class="menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <ul id="menuList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html" class="ativo">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="acoes-cabecalho">
+                <button id="btnDarkMode" class="btn-dark-mode" aria-label="Alternar modo escuro">
+                    🌙 Escuro
+                </button>
+                <a href="carrinho.html" class="link-carrinho">
+                    🛒
+                    <span class="contador-carrinho" id="contadorCarrinho">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    BANNER DA PÁGINA
+    ============================================================ -->
+    <section class="banner-pagina">
+        <div class="container">
+            <h1>❓ Perguntas Frequentes</h1>
+            <p class="subtitulo-secao">
+                Tire suas dúvidas sobre produtos, envios, trocas e muito mais
+            </p>
+            <div class="linha-decorativa">
+                <span class="flor">🌸</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    BUSCA
+    ============================================================ -->
+    <div class="faq-busca container">
+        <input type="text" id="buscaFaq" placeholder="🔍 Buscar pergunta...">
+    </div>
+
+    <!-- ============================================================
+    CATEGORIAS RÁPIDAS
+    ============================================================ -->
+    <div class="container">
+        <div class="categorias-rapidas" id="categoriasRapidas">
+            <button class="btn-cat ativo" data-categoria="todas">📋 Todas</button>
+            <button class="btn-cat" data-categoria="produtos">🧴 Produtos</button>
+            <button class="btn-cat" data-categoria="envio">📦 Envio</button>
+            <button class="btn-cat" data-categoria="pagamento">💳 Pagamento</button>
+            <button class="btn-cat" data-categoria="trocas">🔄 Trocas</button>
+            <button class="btn-cat" data-categoria="empresa">🌸 Empresa</button>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    PERGUNTAS
+    ============================================================ -->
+    <section class="faq">
+        <div class="container">
+            <div class="grade-faq" id="gradeFaq">
+                <!-- Os itens serão inseridos pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTATO RÁPIDO
+    ============================================================ -->
+    <section class="faq-contato-rapido container">
+        <h4>💬 Não encontrou sua resposta?</h4>
+        <p>
+            Fale diretamente com a gente! Respondemos em até 24 horas.
+        </p>
+        <a href="contato.html" class="botao-primario">
+            📩 Falar com atendimento
+        </a>
+    </section>
+
+    <!-- ============================================================
+    🚀 VEJA MEUS PROJETOS
+    ============================================================ -->
+    <div class="voltar-portfolio">
+        <div class="container">
+            <a href="https://carlos-v-costa.github.io/meuportifolio/" class="botao-voltar">
+                🚀 Veja meus projetos
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    RODAPÉ
+    ============================================================ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grade-rodape">
+                <div class="coluna-rodape">
+                    <h4>🌸 Raiz Floral</h4>
+                    <p>Cosméticos naturais para quem ama a pele e o planeta.</p>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="contato.html">Fale Conosco</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape">
+                    <h4>Redes Sociais</h4>
+                    <div class="redes-sociais">
+                        <a href="#">📱 Instagram</a>
+                        <a href="#">📱 Facebook</a>
+                        <a href="#">📱 YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <p>© 2024 Raiz Floral - Feito com <span class="coracao">🌸</span> por <strong>Carlos V. Costa</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // DADOS DA FAQ
+        // ============================================================
+        const dadosFaq = [
+            // ===== PRODUTOS =====
+            {
+                id: 1,
+                categoria: "produtos",
+                pergunta: "Os produtos são realmente 100% naturais?",
+                resposta: "Sim! Todos os nossos produtos são feitos com ingredientes 100% naturais, livres de parabenos, sulfatos e outras substâncias agressivas. Usamos manteigas, óleos vegetais e extratos de plantas selecionados."
+            },
+            {
+                id: 2,
+                categoria: "produtos",
+                pergunta: "Os produtos são testados em animais?",
+                resposta: "Não! Somos uma marca 100% cruelty-free. Nunca testamos nossos produtos em animais e somos certificados por organizações que garantem essa prática."
+            },
+            {
+                id: 3,
+                categoria: "produtos",
+                pergunta: "Qual a validade dos produtos?",
+                resposta: "Nossos produtos têm validade média de 18 a 24 meses a partir da data de fabricação. Recomendamos conservar em local fresco e seco, longe da luz solar direta."
+            },
+            {
+                id: 4,
+                categoria: "produtos",
+                pergunta: "Os produtos são veganos?",
+                resposta: "Sim! Todos os nossos produtos são 100% veganos. Não utilizamos nenhum ingrediente de origem animal em nossas fórmulas."
+            },
+            {
+                id: 5,
+                categoria: "produtos",
+                pergunta: "Posso usar os produtos em peles sensíveis?",
+                resposta: "Sim! Nossas fórmulas são desenvolvidas para serem suaves e hipoalergênicas. Recomendamos fazer um teste em uma pequena área da pele antes do uso completo."
+            },
+
+            // ===== ENVIO =====
+            {
+                id: 6,
+                categoria: "envio",
+                pergunta: "Quanto tempo demora o envio?",
+                resposta: "O prazo de envio é de 1 a 3 dias úteis para processamento, mais o prazo de transporte (2 a 10 dias úteis dependendo da região). Você recebe o código de rastreio por e-mail."
+            },
+            {
+                id: 7,
+                categoria: "envio",
+                pergunta: "O frete é grátis?",
+                resposta: "Sim! Oferecemos frete grátis para compras acima de R$150 para todo o Brasil. Para compras abaixo desse valor, o frete é calculado no checkout."
+            },
+            {
+                id: 8,
+                categoria: "envio",
+                pergunta: "Como rastrear meu pedido?",
+                resposta: "Após a postagem, você receberá um e-mail com o código de rastreio. Você pode acompanhar pelo site dos Correios ou transportadora parceira."
+            },
+            {
+                id: 9,
+                categoria: "envio",
+                pergunta: "Entregam para todo o Brasil?",
+                resposta: "Sim! Entregamos para todas as regiões do Brasil, incluindo áreas rurais e comunidades remotas. O prazo pode variar de acordo com a localização."
+            },
+
+            // ===== PAGAMENTO =====
+            {
+                id: 10,
+                categoria: "pagamento",
+                pergunta: "Quais formas de pagamento são aceitas?",
+                resposta: "Aceitamos cartões de crédito (Visa, Mastercard, Elo, Amex), cartões de débito, PIX, boleto bancário e parcelamento em até 6x sem juros no cartão."
+            },
+            {
+                id: 11,
+                categoria: "pagamento",
+                pergunta: "O pagamento é seguro?",
+                resposta: "Sim! Nossa plataforma utiliza criptografia SSL de ponta a ponta e todas as transações são processadas por gateways de pagamento certificados e seguros."
+            },
+
+            // ===== TROCAS =====
+            {
+                id: 12,
+                categoria: "trocas",
+                pergunta: "Posso trocar ou devolver um produto?",
+                resposta: "Sim! Você tem até 7 dias após o recebimento para solicitar a troca ou devolução. O produto deve estar lacrado e na embalagem original. Entre em contato com nosso atendimento."
+            },
+            {
+                id: 13,
+                categoria: "trocas",
+                pergunta: "O reembolso é feito como?",
+                resposta: "O reembolso é feito no mesmo método de pagamento utilizado. Para cartão, o estorno pode levar até 2 faturas. Para PIX, o reembolso é feito em até 48h."
+            },
+            {
+                id: 14,
+                categoria: "trocas",
+                pergunta: "Quem paga o frete para devolução?",
+                resposta: "Em caso de erro no envio ou produto com defeito, nós arcamos com o frete de devolução. Em outros casos, o custo do frete fica por conta do cliente."
+            },
+
+            // ===== EMPRESA =====
+            {
+                id: 15,
+                categoria: "empresa",
+                pergunta: "Onde fica a Raiz Floral?",
+                resposta: "Nossa sede fica em São Paulo - SP, na Rua das Flores, 123, Jardim Botânico. Mas operamos online para todo o Brasil."
+            },
+            {
+                id: 16,
+                categoria: "empresa",
+                pergunta: "A Raiz Floral tem loja física?",
+                resposta: "Atualmente trabalhamos apenas com nossa loja online. Mas realizamos feiras e eventos em São Paulo - fique de olho nas nossas redes sociais para saber quando e onde!"
+            },
+            {
+                id: 17,
+                categoria: "empresa",
+                pergunta: "Como posso entrar em contato?",
+                resposta: "Você pode nos contatar pelo e-mail contato@raizfloral.com, pelo telefone (11) 99999-9999, ou através do nosso formulário de contato no site."
+            }
+        ];
+
+        // ============================================================
+        // RENDERIZAR FAQ
+        // ============================================================
+        let filtroCategoria = 'todas';
+        let buscaAtual = '';
+
+        function renderizarFaq() {
+            const container = document.getElementById('gradeFaq');
+            if (!container) return;
+
+            // Filtrar por categoria
+            let itensFiltrados = dadosFaq;
+            if (filtroCategoria !== 'todas') {
+                itensFiltrados = itensFiltrados.filter(item => item.categoria === filtroCategoria);
+            }
+
+            // Filtrar por busca
+            if (buscaAtual.trim() !== '') {
+                const termo = buscaAtual.toLowerCase().trim();
+                itensFiltrados = itensFiltrados.filter(item =>
+                    item.pergunta.toLowerCase().includes(termo) ||
+                    item.resposta.toLowerCase().includes(termo)
+                );
+            }
+
+            // Agrupar por categoria
+            const categorias = {};
+            itensFiltrados.forEach(item => {
+                if (!categorias[item.categoria]) {
+                    categorias[item.categoria] = [];
+                }
+                categorias[item.categoria].push(item);
+            });
+
+            container.innerHTML = '';
+
+            const nomesCategorias = {
+                produtos: '🧴 Produtos',
+                envio: '📦 Envio e Entrega',
+                pagamento: '💳 Pagamento',
+                trocas: '🔄 Trocas e Devoluções',
+                empresa: '🌸 Sobre a Empresa'
+            };
+
+            const keys = Object.keys(categorias);
+
+            if (keys.length === 0) {
+                container.innerHTML = `
+                    <div class="sem-resultados-faq">
+                        <span class="icone">🔍</span>
+                        <h4>Nenhuma pergunta encontrada</h4>
+                        <p>Tente usar outros termos ou navegar pelas categorias</p>
+                    </div>
+                `;
+                return;
+            }
+
+            keys.forEach(categoria => {
+                const items = categorias[categoria];
+                const nomeCategoria = nomesCategorias[categoria] || categoria;
+
+                const div = document.createElement('div');
+                div.className = 'categoria-faq';
+                div.dataset.categoria = categoria;
+
+                let html = `
+                    <span class="titulo-categoria">${nomeCategoria}</span>
+                    <h3>${items.length} pergunta${items.length > 1 ? 's' : ''}</h3>
+                `;
+
+                items.forEach(item => {
+                    html += `
+                        <div class="item-faq" data-id="${item.id}">
+                            <div class="pergunta" onclick="toggleFaq(${item.id})">
+                                <h4>${item.pergunta}</h4>
+                                <span class="icone-toggle" id="toggle-${item.id}">▼</span>
+                            </div>
+                            <div class="resposta" id="resposta-${item.id}">
+                                <p>${item.resposta}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                div.innerHTML = html;
+                container.appendChild(div);
+            });
+        }
+
+        // ============================================================
+        // TOGGLE FAQ
+        // ============================================================
+        function toggleFaq(id) {
+            const resposta = document.getElementById(`resposta-${id}`);
+            const toggle = document.getElementById(`toggle-${id}`);
+            
+            if (!resposta) return;
+            
+            const isOpen = resposta.classList.contains('aberto');
+            
+            // Fechar todas as respostas da mesma categoria
+            const categoria = dadosFaq.find(item => item.id === id)?.categoria;
+            if (categoria) {
+                document.querySelectorAll(`.categoria-faq[data-categoria="${categoria}"] .resposta`).forEach(el => {
+                    if (el.id !== `resposta-${id}`) {
+                        el.classList.remove('aberto');
+                        const toggleId = el.id.replace('resposta-', 'toggle-');
+                        const toggleEl = document.getElementById(toggleId);
+                        if (toggleEl) toggleEl.classList.remove('aberto');
+                    }
+                });
+            }
+            
+            // Alternar a clicada
+            resposta.classList.toggle('aberto');
+            if (toggle) {
+                toggle.classList.toggle('aberto');
+            }
+        }
+
+        // ============================================================
+        // FILTROS E BUSCA
+        // ============================================================
+        function initFiltrosFaq() {
+            const botoes = document.querySelectorAll('.btn-cat');
+            botoes.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    botoes.forEach(b => b.classList.remove('ativo'));
+                    this.classList.add('ativo');
+                    filtroCategoria = this.dataset.categoria;
+                    renderizarFaq();
+                });
+            });
+        }
+
+        function initBuscaFaq() {
+            const input = document.getElementById('buscaFaq');
+            if (input) {
+                input.addEventListener('input', function() {
+                    buscaAtual = this.value;
+                    renderizarFaq();
+                });
+            }
+        }
+
+        // ============================================================
+        // CARRINHO - GLOBAL
+        // ============================================================
+        let carrinho = [];
+
+        function carregarCarrinho() {
+            const dados = localStorage.getItem('carrinhoRaizFloral');
+            if (dados) {
+                try {
+                    carrinho = JSON.parse(dados);
+                } catch {
+                    carrinho = [];
+                }
+            } else {
+                carrinho = [];
+            }
+            atualizarContador();
+        }
+
+        function salvarCarrinho() {
+            localStorage.setItem('carrinhoRaizFloral', JSON.stringify(carrinho));
+            atualizarContador();
+        }
+
+        function atualizarContador() {
+            const contador = document.getElementById('contadorCarrinho');
+            if (contador) {
+                const total = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+                contador.textContent = total;
+            }
+        }
+
+        // ============================================================
+        // MENU MOBILE
+        // ============================================================
+        function initMenuMobile() {
+            const toggle = document.getElementById('menuToggle');
+            const menuList = document.getElementById('menuList');
+
+            if (toggle && menuList) {
+                toggle.addEventListener('click', function() {
+                    menuList.classList.toggle('aberto');
+                    this.textContent = menuList.classList.contains('aberto') ? '✕' : '☰';
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!toggle.contains(e.target) && !menuList.contains(e.target)) {
+                        menuList.classList.remove('aberto');
+                        toggle.textContent = '☰';
+                    }
+                });
+            }
+        }
+
+        // ============================================================
+        // MODO ESCURO
+        // ============================================================
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const btn = document.getElementById('btnDarkMode');
+            
+            html.classList.toggle('dark-mode');
+            const isDark = html.classList.contains('dark-mode');
+            
+            localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+            
+            if (btn) {
+                btn.innerHTML = isDark ? '☀️ Claro' : '🌙 Escuro';
+            }
+        }
+
+        function initDarkMode() {
+            const btn = document.getElementById('btnDarkMode');
+            if (!btn) return;
+            
+            const saved = localStorage.getItem('darkMode');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (saved !== null) {
+                if (saved === 'true') {
+                    document.documentElement.classList.add('dark-mode');
+                    btn.innerHTML = '☀️ Claro';
+                } else {
+                    btn.innerHTML = '🌙 Escuro';
+                }
+            } else if (prefersDark) {
+                document.documentElement.classList.add('dark-mode');
+                btn.innerHTML = '☀️ Claro';
+            } else {
+                btn.innerHTML = '🌙 Escuro';
+            }
+            
+            btn.addEventListener('click', toggleDarkMode);
+        }
+
+        // ============================================================
+        // INICIALIZAR
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarCarrinho();
+            initMenuMobile();
+            initDarkMode();
+            renderizarFaq();
+            initFiltrosFaq();
+            initBuscaFaq();
+        });
+    </script>
+
+</body>
+</html>
