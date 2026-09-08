@@ -313,6 +313,72 @@ h4 {
 }
 
 /* ============================================================
+   SCROLL REVEAL - ANIMAÇÕES
+   ============================================================ */
+
+/* Elementos começam invisíveis */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando ficam visíveis */
+.reveal.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay progressivo para cards em grade */
+.reveal:nth-child(1) { transition-delay: 0.05s; }
+.reveal:nth-child(2) { transition-delay: 0.10s; }
+.reveal:nth-child(3) { transition-delay: 0.15s; }
+.reveal:nth-child(4) { transition-delay: 0.20s; }
+.reveal:nth-child(5) { transition-delay: 0.25s; }
+.reveal:nth-child(6) { transition-delay: 0.30s; }
+.reveal:nth-child(7) { transition-delay: 0.35s; }
+.reveal:nth-child(8) { transition-delay: 0.40s; }
+
+/* Efeito de escala para cards de produto */
+.reveal-escala {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-escala.visivel {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Efeito de deslize lateral */
+.reveal-esquerda {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-esquerda.visivel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-direita {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-direita.visivel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================================
    CABEÇALHO
    ============================================================ */
 .cabecalho {
@@ -2588,7 +2654,7 @@ h4 {
         margin: 0 auto;
     }
 
-    .historia-texto .citazione {
+    .historia-texto .citacao {
         font-size: 1.1rem;
         padding: 16px 20px;
     }
